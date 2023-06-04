@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowTarget : MonoBehaviour
+public class FollowTargetLerp : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float speed = 1f;
     [SerializeField] private float delay = 0.1f;
     [SerializeField] private float followDistance = 2f;
+    private SphereCollider targetCollider;
     private bool isFollowing = false;
 
     public bool IsFollowing { get => isFollowing; set => isFollowing = value; }
 
+    private void Start()
+    {
+        targetCollider = GetComponent<SphereCollider>();
+    }
     private void Update()
     {
         if(isFollowing && target is not null) MoveTowardsTarget();
@@ -20,7 +25,7 @@ public class FollowTarget : MonoBehaviour
     //move towards the target with a small delay and a given speed
     public void MoveTowardsTarget()
     {
-        Vector3 LerpXY = Vector3.Lerp(transform.position, target.position - (target.transform.right * followDistance), speed * Time.deltaTime);
+        Vector3 LerpXY = Vector3.Lerp(transform.position, target.position - (target.transform.right * followDistance) + (target.transform.up * targetCollider.bounds.extents.y/2), speed * Time.deltaTime);
         transform.position = new Vector3(LerpXY.x, LerpXY.y, transform.position.z);
     }
 
