@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Events;
 using UnityEngine.Localization;
 using TMPro;
@@ -8,8 +9,15 @@ using TMPro;
 
 public class Speaker : MonoBehaviour
 {
+    public enum DialogHitboxType
+{
+    Sphere,
+    Box
+}
+
     private PlayerStateManager player;
-    public float speakRange = 5f;
+    [HideInInspector] public DialogHitboxType dialogHitboxType;
+    [HideInInspector] public float speakRange = 5f;
     [SerializeField] private bool activateInRange = true;
     public List<Dialog> dialog;
     private Sentence currentSentence;
@@ -21,6 +29,10 @@ public class Speaker : MonoBehaviour
     private bool isDialogActive = false;
     private bool isWithinRange = false;
     [SerializeField] private SphereCollider speakCollider;
+    [SerializeField] private BoxCollider boxCollider;
+    [HideInInspector] public Vector3 boxSize = new Vector3(1, 1, 1);
+    [HideInInspector] public Vector3 boxPosition = new Vector3(0, 0, 0);
+    [HideInInspector] public Transform boxTransform;
 
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private TextMeshProUGUI characterName;
@@ -28,10 +40,11 @@ public class Speaker : MonoBehaviour
 
     void Start()
     {
-        speakCollider = gameObject.AddComponent<SphereCollider>();
-        speakCollider.radius = speakRange;
-        speakCollider.transform.position = transform.position;
-        speakCollider.isTrigger = true;
+        // speakCollider = gameObject.AddComponent<SphereCollider>();
+        // speakCollider.radius = speakRange;
+        // speakCollider.transform.position = transform.position;
+        // speakCollider.isTrigger = true;
+        SetColliders();
     }
     void OnEnable()
     {
@@ -64,14 +77,10 @@ public class Speaker : MonoBehaviour
         isSpeaking = false;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, speakRange);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("triggered");
         if(activateInRange && other.gameObject.layer == LayerMask.NameToLayer("Player") && !isDialogActive)
         {
             StartDialog();
@@ -135,5 +144,44 @@ public class Speaker : MonoBehaviour
         {
             currentDialogIndex = dialog.IndexOf(dialog.Find(x => x.identifier == identifier));
         }
+    }
+
+
+    public void SetColliders(){
+        if(dialogHitboxType == DialogHitboxType.Sphere){
+            speakCollider = gameObject.AddComponent<SphereCollider>();
+            speakCollider.enabled = true;
+            speakCollider.radius = speakRange * 0.325f;
+            speakCollider.transform.InverseTransformPoint(transform.position);
+            speakCollider.transform.position = transform.position;
+            speakCollider.isTrigger = true;
+        }
+        else if(dialogHitboxType == DialogHitboxType.Box){
+            boxCollider = gameObject.AddComponent<BoxCollider>();
+            boxCollider.enabled = true;
+            boxCollider.isTrigger = true;
+            // boxCollider.size = boxCollider.transform.InverseTransformDirection(boxSize);//boxSize;
+            // boxCollider.transform.localScale = boxSize;
+            boxCollider.size = boxSize / 3;
+            boxCollider.center = boxPosition / 3;
+        }
+    }
+
+    public void RemoveColliders(){
+        if(dialogHitboxType == DialogHitboxType.Sphere){
+            DestroyImmediate(speakCollider);
+        }
+        else if(dialogHitboxType == DialogHitboxType.Box){
+            DestroyImmediate(boxCollider);
+        }
+    }
+
+    [ContextMenu("Lock Transform")]
+    public void LockTransform(){
+        gameObject.transform.hideFlags = HideFlags.NotEditable;
+    }
+    [ContextMenu("Unlock Transform")]
+    public void UnlockTransform(){
+        gameObject.transform.hideFlags = HideFlags.None;
     }
 }

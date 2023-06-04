@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class Dialog
 {
     public string identifier;
+    public AudioClip[] voiceClips;
     public Sentence[] sentences;
 
     public UnityEvent OnDialogComplete;
