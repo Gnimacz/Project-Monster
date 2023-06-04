@@ -10,6 +10,7 @@ public class FollowTargetLerp : MonoBehaviour
     [SerializeField] private float followDistance = 2f;
     private SphereCollider targetCollider;
     private bool isFollowing = false;
+    [SerializeField] private bool lockToTargetY = true;
 
     public bool IsFollowing { get => isFollowing; set => isFollowing = value; }
 
@@ -26,7 +27,7 @@ public class FollowTargetLerp : MonoBehaviour
     public void MoveTowardsTarget()
     {
         Vector3 LerpXY = Vector3.Lerp(transform.position, target.position - (target.transform.right * followDistance) + (target.transform.up * targetCollider.bounds.extents.y/2), speed * Time.deltaTime);
-        transform.position = new Vector3(LerpXY.x, LerpXY.y, transform.position.z);
+        transform.position = new Vector3(LerpXY.x, lockToTargetY? target.position.y : LerpXY.y, transform.position.z);
     }
 
 
