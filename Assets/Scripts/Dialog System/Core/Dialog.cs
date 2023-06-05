@@ -11,6 +11,7 @@ public class Dialog
     public string identifier;
     public AudioClip[] voiceClips;
     public Sentence[] sentences;
+    public int dialogueRepeatTimes = 0;
 
     public UnityEvent OnDialogComplete;
 }

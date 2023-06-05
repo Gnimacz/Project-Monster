@@ -19,8 +19,6 @@ public class Speaker : MonoBehaviour
     [HideInInspector] public DialogHitboxType dialogHitboxType;
     [HideInInspector] public float speakRange = 5f;
     [SerializeField] private bool activateInRange = true;
-    [SerializeField] private bool repeatDialogue = true;
-    private bool dialogueFinished = false;
     public List<Dialog> dialog;
     private Sentence currentSentence;
     public static string currentText = "";
@@ -83,12 +81,13 @@ public class Speaker : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("triggered");
-        if(activateInRange && other.gameObject.layer == LayerMask.NameToLayer("Player") && !isDialogActive)
+        if(activateInRange && other.gameObject.layer == LayerMask.NameToLayer("Player") && dialog[currentDialogIndex].dialogueRepeatTimes >= 0 && !isDialogActive)
         {
             StartDialog();
             isWithinRange = true;
             player = other.GetComponent<PlayerStateManager>();
             player.ChangeState(player.dialogueState);
+            dialog[currentDialogIndex].dialogueRepeatTimes--;
         }
     }
     private void OnTriggerExit(Collider other) {
@@ -124,7 +123,6 @@ public class Speaker : MonoBehaviour
                     currentSentenceIndex = 0;
                     isDialogActive = false;
                     isSpeaking = false;
-                    if (!repeatDialogue) dialogueFinished = true;
                     player.ChangeState(player.idleState);
                 }
                 else
