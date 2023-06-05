@@ -26,6 +26,7 @@ namespace MonsterInput
         public static EventHandler<InputAction.CallbackContext> DeviceLostEvent;
         public static EventHandler<InputAction.CallbackContext> DeviceRegainedEvent;
         public static EventHandler<InputAction.CallbackContext> ControlschangedEvent;
+        public static EventHandler<InputAction.CallbackContext> UIInteractButton;
 
         private void OnEnable()
         {
@@ -110,6 +111,11 @@ namespace MonsterInput
         public static void OnControlschangedEvent(InputAction.CallbackContext context)
         {
             ControlschangedEvent?.Invoke(null, context);
+        }
+
+        public void OnUIInteractButton(InputAction.CallbackContext context)
+        {
+            UIInteractButton?.Invoke(null, context);
         }
 
     }
