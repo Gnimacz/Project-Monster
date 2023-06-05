@@ -29,11 +29,12 @@ public class ControlValues : MonoBehaviour
         if (Instance is null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            Instance = this;
         }
     }
 }
