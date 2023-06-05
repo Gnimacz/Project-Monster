@@ -151,9 +151,9 @@ MonoBehaviour:
   feet: {fileID: 9128862613470445196}
   horizontalDrag: 5
   runAcceleration: 200
-  runMaxSpeed: 7
+  runMaxSpeed: 8
   airAcceleration: 50
-  airMaxSpeed: 7
+  airMaxSpeed: 8
   jumpForce: 20
   climbSpeed: 7
   slideSpeed: 15
