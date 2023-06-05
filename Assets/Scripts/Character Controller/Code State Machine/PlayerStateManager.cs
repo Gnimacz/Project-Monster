@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using MonsterInput;
+using Unity.VisualScripting;
 
 public class PlayerStateManager : MonoBehaviour
 {
@@ -189,6 +190,20 @@ public class PlayerStateManager : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "BouncySurface")
+        {
+            BouncyObject bouncyObject = other.gameObject.GetComponent<BouncyObject>();
+            Vector3 launchDirectionRotated = new Vector3(-bouncyObject.launchDirection.y, bouncyObject.launchDirection.x, 0);
+            rb.velocity = launchDirectionRotated * Vector3.Dot(rb.velocity, launchDirectionRotated);
+            //I did a vecto projection here to make it so that the player doesn't loose velocity in relation to
+            //the bouncy object but still gets launched the same amout no matter what
+            //I think it works the way I intended but you never know with math
+            rb.velocity += bouncyObject.launchDirection * bouncyObject.launchForce;
+        }
     }
 
     #region Input Actions
