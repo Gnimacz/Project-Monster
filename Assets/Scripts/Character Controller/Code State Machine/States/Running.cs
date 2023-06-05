@@ -2,6 +2,7 @@
 using Unity;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MonsterInput;
@@ -35,6 +36,12 @@ public class Running : State
             player.ChangeState(player.inAirState);
             return;
         }
+        
+        if (player.rb.velocity.x > 0)
+            ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
+        else
+            ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
+        
 
         player.ApplyDrag();
     }
@@ -47,7 +54,6 @@ public class Running : State
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
-        player.rb.velocity = new Vector3(0, player.rb.velocity.y, 0);
     }
 
     public override void ExitState(PlayerStateManager player)

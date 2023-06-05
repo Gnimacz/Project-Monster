@@ -21,8 +21,10 @@ public class ControlValues : MonoBehaviour
     public Vector3 currentSlideEnd;
     public Vector3 currentSlideDirection;
     public Vector3 lastCheckpoint;
+    public Vector3 currentSurfaceNormal;
     public List<Vector3> checkpointBacklog = new List<Vector3>();
     public float lastGroundedTime;
+    public Quaternion targetMeshRotation;
 
     private void Awake()
     {

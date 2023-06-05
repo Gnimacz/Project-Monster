@@ -7,5 +7,6 @@ public class Surface : MonoBehaviour
     public Transform startPoint;
     public Transform endPoint;
     public Transform Collision;
-    
+    public Vector3 normal;
+    public bool invertNormal;
 }

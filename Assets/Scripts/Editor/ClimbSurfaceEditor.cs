@@ -11,6 +11,7 @@ public class ClimbSurfaceEditor : Editor
     private void OnEnable()
     {
         climbSurface = (ClimbSurface)target;
+        Apply();
     }
 
     public override void OnInspectorGUI()
@@ -29,6 +30,13 @@ public class ClimbSurfaceEditor : Editor
             return;
         
         StartEndHandles();
+        NormalIndicator();
+    }
+
+    void NormalIndicator()
+    {
+        Vector3 center = (climbSurface.startPoint.position + climbSurface.endPoint.position) / 2;
+        Debug.DrawLine(center, center + climbSurface.normal * 3, Color.red);
     }
     
     void StartEndHandles()
@@ -57,6 +65,10 @@ public class ClimbSurfaceEditor : Editor
         collision.position = (startPoint + endPoint) / 2;
         collision.LookAt(endPoint);
         collision.localScale = new Vector3(1, 1, Vector3.Distance(startPoint, endPoint));
+
+        Vector3 vector = (endPoint - startPoint).normalized;
+        climbSurface.normal = new Vector3(-vector.y, vector.x, 0);
+        if (climbSurface.invertNormal) climbSurface.normal = -climbSurface.normal;
     }
     
 }

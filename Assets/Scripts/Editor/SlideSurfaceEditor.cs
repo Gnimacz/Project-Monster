@@ -29,6 +29,13 @@ public class SlideSurfaceEditor : Editor
             return;
         
         StartEndHandles();
+        NormalIndicator();
+    }
+    
+    void NormalIndicator()
+    {
+        Vector3 center = (slideSurface.startPoint.position + slideSurface.endPoint.position) / 2;
+        Debug.DrawLine(center, center + slideSurface.normal * 3, Color.red);
     }
     
     void StartEndHandles()
@@ -57,6 +64,10 @@ public class SlideSurfaceEditor : Editor
         collision.position = (startPoint + endPoint) / 2;
         collision.LookAt(endPoint);
         collision.localScale = new Vector3(1, 1, Vector3.Distance(startPoint, endPoint));
+        
+        Vector3 vector = (endPoint - startPoint).normalized;
+        slideSurface.normal = new Vector3(-vector.y, vector.x, 0);
+        if (slideSurface.invertNormal) slideSurface.normal = -slideSurface.normal;
     }
     
 }

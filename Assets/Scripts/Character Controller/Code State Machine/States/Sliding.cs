@@ -42,6 +42,8 @@ public class Sliding : State
         player.rb.position = closetsPoint; // snap the player to the clmbable surface
 
         player.rb.useGravity = false;
+        
+        ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(ControlValues.Instance.currentSlideDirection, ControlValues.Instance.currentSurfaceNormal);
 
         this.player = player;
         InputEvents.Move += OnMove;
@@ -55,7 +57,6 @@ public class Sliding : State
 
         Vector3 horizontalDirection = new Vector3(Mathf.Round(ControlValues.Instance.currentSlideDirection.x), 0, 0);
         player.rb.AddForce(horizontalDirection * player.slideExitLaunchForce, ForceMode.Impulse);
-        player.airMaxSpeed = player.rb.velocity.magnitude;
 
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;

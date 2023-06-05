@@ -28,24 +28,26 @@ public class PlayerStateManager : MonoBehaviour
 
     public Rigidbody rb;
     public Transform feet;
+    public Transform mesh;
 
     public float horizontalDrag = 5f;
     public float runAcceleration = 5f;
     public float runMaxSpeed = 5f;
     public float airAcceleration = 5f;
     public float airMaxSpeed = 5f;
-    [NonSerialized] public float originalAirMaxSpeed = 5f; //TODO(Look into a possible better way to handle this hack)
     public float jumpForce = 5f;
     public float climbSpeed = 5f;
     public float slideSpeed = 10f;
     public float climbExitJumpForce = 3f;
     public float slideExitLaunchForce = 3f;
     public float coyoteGraceTime = 0.1f;
+    public float meshRotationSpeed = 0.1f;
     
 
     public RaycastHit groundRayCastResults;
     [SerializeField] private float groundRayLength = 1.5f;
     public bool isGrounded = false; //{ get; private set; }
+    
     [SerializeField] private LayerMask groundLayerMask;
 
     public Vector2 moveInput { get; private set; }
@@ -56,7 +58,6 @@ public class PlayerStateManager : MonoBehaviour
         //add current position as checkpoint at the start for testing
         ControlValues.Instance.lastCheckpoint = transform.position;
         ControlValues.Instance.checkpointBacklog.Add(transform.position);
-        originalAirMaxSpeed = airMaxSpeed;
     }
 
     private void OnEnable()
@@ -77,8 +78,8 @@ public class PlayerStateManager : MonoBehaviour
         currentState.UpdateState(this);
         //hardcoded limitations because unity is stupid
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        Vector3 eulerRotation = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(0, eulerRotation.y, 0);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        UpdateMeshRotation();
     }
 
     private void FixedUpdate()
@@ -101,6 +102,14 @@ public class PlayerStateManager : MonoBehaviour
         currentState = newState;
     }
 
+    public void UpdateMeshRotation()
+    {
+        mesh.localRotation = Quaternion.Lerp(
+            mesh.localRotation, 
+            ControlValues.Instance.targetMeshRotation, 
+            meshRotationSpeed * Time.deltaTime);
+    }
+    
     public void ApplyDrag()
     {
         rb.velocity = new Vector3(Mathf.Lerp(rb.velocity.x, 0, horizontalDrag * Time.deltaTime), rb.velocity.y, 0);
@@ -147,6 +156,8 @@ public class PlayerStateManager : MonoBehaviour
                 ControlValues.Instance.currentClimbStart = climbSurface.startPoint.position;
                 ControlValues.Instance.currentClimbEnd = climbSurface.endPoint.position;
                 ControlValues.Instance.currentClimbOrientation = climbSurface.climbOrientation;
+                ControlValues.Instance.currentSurfaceNormal = climbSurface.normal;
+            
 
                 ChangeState(climbingState);
                 break;
@@ -156,6 +167,8 @@ public class PlayerStateManager : MonoBehaviour
                 ControlValues.Instance.currentSlideStart = slideSurface.startPoint.position;
                 ControlValues.Instance.currentSlideEnd = slideSurface.endPoint.position;
                 ControlValues.Instance.currentSlideDirection = (slideSurface.endPoint.position - slideSurface.startPoint.position).normalized;
+                ControlValues.Instance.currentSurfaceNormal = slideSurface.normal;
+                
 
                 ChangeState(slideState);
                 break;
