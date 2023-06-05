@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Events;
+using MonsterInput;
 
 public class PlayerStateManager : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class PlayerStateManager : MonoBehaviour
     public InAir inAirState = new InAir();
     public Climbing climbingState = new Climbing();
     public Sliding slideState = new Sliding();
+    public Dialogue dialogueState = new Dialogue();
     #endregion
 
     #region Current and previous states
@@ -31,6 +35,7 @@ public class PlayerStateManager : MonoBehaviour
     public float runMaxSpeed = 5f;
     public float airAcceleration = 5f;
     public float airMaxSpeed = 5f;
+    [NonSerialized] public float originalAirMaxSpeed = 5f; //TODO(Look into a possible better way to handle this hack)
     public float jumpForce = 5f;
     public float climbSpeed = 5f;
     public float slideSpeed = 10f;
@@ -39,23 +44,35 @@ public class PlayerStateManager : MonoBehaviour
     public float coyoteGraceTime = 0.1f;
     public float meshRotationSpeed = 0.1f;
     
+
     public RaycastHit groundRayCastResults;
     [SerializeField] private float groundRayLength = 1.5f;
     public bool isGrounded = false; //{ get; private set; }
     #endregion
+    [SerializeField] private LayerMask groundLayerMask;
+
+    public Vector2 moveInput { get; private set; }
+    #endregion 
 
     private void Start()
     {
         //add current position as checkpoint at the start for testing
         ControlValues.Instance.lastCheckpoint = transform.position;
         ControlValues.Instance.checkpointBacklog.Add(transform.position);
+        originalAirMaxSpeed = airMaxSpeed;
     }
-    
+
     private void OnEnable()
     {
         currentState = idleState;
         currentState.EnterState(this);
         previousState = currentState;
+
+        InputEvents.Move += OnMove;
+    }
+    private void OnDisable()
+    {
+        InputEvents.Move -= OnMove;
     }
     // Update is called once per frame
     void Update()
@@ -70,7 +87,7 @@ public class PlayerStateManager : MonoBehaviour
     private void FixedUpdate()
     {
         currentState.FixedUpdateState(this);
-        
+
         //cast a ray downard from the bottom of the character collider to see if we are on the ground
         isGrounded = Physics.OverlapSphere(feet.position, 0.4f, ~LayerMask.GetMask("Player")).Length > 0;
         if (isGrounded)
@@ -106,12 +123,13 @@ public class PlayerStateManager : MonoBehaviour
         rb.position = ControlValues.Instance.lastCheckpoint;
         ChangeState(idleState);
     }
-    
+
     private void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 300, 30), "Current State: " + currentState.ToString());
         GUI.Label(new Rect(10, 20, 300, 30), "Current Velocity: " + rb.velocity.ToString());
         GUI.Label(new Rect(10, 30, 300, 30), (Time.timeSinceLevelLoad - ControlValues.Instance.lastGroundedTime).ToString());
+        GUI.Label(new Rect(10, 50, 256, 30), "Current MoveInput: " + moveInput.ToString());
     }
 
     private void OnTriggerStay(Collider other)
@@ -142,9 +160,10 @@ public class PlayerStateManager : MonoBehaviour
                 ControlValues.Instance.currentClimbOrientation = climbSurface.climbOrientation;
                 ControlValues.Instance.currentSurfaceNormal = climbSurface.normal;
             
+
                 ChangeState(climbingState);
                 break;
-            
+
             case "SlideSurface":
                 SlideSurface slideSurface = other.transform.parent.GetComponent<SlideSurface>();
                 ControlValues.Instance.currentSlideStart = slideSurface.startPoint.position;
@@ -152,13 +171,14 @@ public class PlayerStateManager : MonoBehaviour
                 ControlValues.Instance.currentSlideDirection = (slideSurface.endPoint.position - slideSurface.startPoint.position).normalized;
                 ControlValues.Instance.currentSurfaceNormal = slideSurface.normal;
                 
+
                 ChangeState(slideState);
                 break;
-            
+
             case "DeathSurface":
                 Respawn();
                 break;
-            
+
             case "Checkpoint":
                 if (!ControlValues.Instance.checkpointBacklog.Contains(other.transform.position))
                 {
@@ -166,10 +186,17 @@ public class PlayerStateManager : MonoBehaviour
                     ControlValues.Instance.checkpointBacklog.Add(other.transform.position);
                 }
                 break;
-            
+
             default:
                 break;
         }
-        
+
     }
+
+    #region Input Actions
+    public void OnMove(object sender, InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+    #endregion
 }

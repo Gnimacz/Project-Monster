@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using MonsterInput;
 
 public class Sliding : State
 {
+    private PlayerStateManager player;
     public override void UpdateState(PlayerStateManager player)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            player.ChangeState(player.jumpingState);
-            return;
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     player.ChangeState(player.jumpingState);
+        //     return;
+        // }
 
         if (Vector3.Distance(player.rb.position, ControlValues.Instance.currentSlideEnd) < 0.5f)
         {
@@ -41,6 +44,11 @@ public class Sliding : State
         player.rb.useGravity = false;
         
         ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(ControlValues.Instance.currentSlideDirection, ControlValues.Instance.currentSurfaceNormal);
+
+        this.player = player;
+        InputEvents.Move += OnMove;
+        InputEvents.InteractButton += OnInteract;
+        InputEvents.JumpButton += OnJump;
     }
 
     public override void ExitState(PlayerStateManager player)
@@ -49,7 +57,26 @@ public class Sliding : State
 
         Vector3 horizontalDirection = new Vector3(Mathf.Round(ControlValues.Instance.currentSlideDirection.x), 0, 0);
         player.rb.AddForce(horizontalDirection * player.slideExitLaunchForce, ForceMode.Impulse);
+        player.airMaxSpeed = player.rb.velocity.magnitude;
+
+        InputEvents.Move -= OnMove;
+        InputEvents.InteractButton -= OnInteract;
+        InputEvents.JumpButton -= OnJump;
     }
     
+    private void OnMove(object sender, InputAction.CallbackContext context) { }
+
+    private void OnJump(object sender, InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            player.ChangeState(player.jumpingState);
+            return;
+        }
+    }
+
+    private void OnInteract(object sender, InputAction.CallbackContext context)
+    {
+    }
     
 }

@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Character Dialogs_nl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: nl
+  m_SharedData: {fileID: 11400000, guid: 9dfad45b424512a42b85798675b9521f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 53992468480
+    m_Localized: Hallo, kleine blauwe vriend. Je lijkt verdwaald. Mijn naam is Spike,
+      blij je te ontmoeten!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391057165758464
+    m_Localized: AAAA! Eet me alsjeblieft niet op!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3624986466578432
+    m_Localized: Wow, je hoeft niet bang te zijn! Ik zie er misschien groot en eng
+      uit, maar ik ben niet anders dan jij. Hoe dan ook, waar ga je zo snel heen?
+      Het is daar gevaarlijk in deze storm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3625164212793344
+    m_Localized: Oh... nou ja, ik probeer gewoon terug naar huis te komen. Vind je
+      het erg om aan de kant te gaan zodat ik erdoorheen kan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639721987665920
+    m_Localized: Nou, zie je, ik heb geprobeerd om daarboven een kers te pakken,
+      maar ik ben te groot om het te halen... Zeg, als je die kers voor me kunt pakken,
+      laat ik je door deze deur gaan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645238076239872
+    m_Localized: Hey daar ben je weer Blue! Dat duurde niet lang. Heb je de kers
+      gekregen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645342854148096
+    m_Localized: Ja! Alsjeblieft!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645398088937472
+    m_Localized: Eindelijk! Heel erg bedankt, Blue, ik sta bij je in het krijt. Ik
+      hoop dat het niet te veel moeite was. Ik ga nu aan de kant, maar wees voorzichtig
+      daarbuiten!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645514455707648
+    m_Localized: Geen enkel probleem, ik help je graag!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645604725518336
+    m_Localized: Veel succes daarbuiten! Ik hoop dat je veilig terugkomt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652339066466304
+    m_Localized: Hallo daar. Gaat het?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652366186835968
+    m_Localized: Niet echt... toen de storm begon raakte ik mijn zusje Dazzle kwijt.
+      Nu ben ik te bang om haar te zoeken...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652393462394880
+    m_Localized: Oh, dat is verschrikkelijk... Nou, ik ga zelf die kant op. Als je
+      wilt, kan ik je helpen terug te komen naar je zusje?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652823500189696
+    m_Localized: Oh, ik zou zo dankbaar zijn als je dat zou willen doen! Ik ben te
+      bang om alleen te gaan...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652925887344640
+    m_Localized: Het zou helemaal geen probleem zijn! Ik zou het gezelschap fijn
+      vinden.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

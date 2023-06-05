@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Character Dialogs_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 9dfad45b424512a42b85798675b9521f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 53992468480
+    m_Localized: Hello, little blue friend. You look lost. My name is Spike, pleased
+      to meet you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391057165758464
+    m_Localized: Ahhh! Please don't eat me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3624986466578432
+    m_Localized: Woah, there's no need to be scared! I may look big and scary, but
+      I'm no different from you. Anyway, where are you going in such a hurry? It's
+      dangerous out there in this storm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3625164212793344
+    m_Localized: Oh... well, I'm just trying to make my way back home. Do you mind
+      moving so I can pass through?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639721987665920
+    m_Localized: Well, you see, I've been trying to get a cherry from up there but
+      I'm too big to make it... Say, if you can get that cherry for me, I'll let
+      you pass through this door no problem!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645238076239872
+    m_Localized: Hey again, Blue! That didn't take you long at all. Did you get the
+      cherry?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645342854148096
+    m_Localized: Yep! Here you go!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645398088937472
+    m_Localized: Finally! Thank you so much, Blue, I owe you one. Hope it wasn't
+      too much trouble. I'll get out of your way now, but you be careful out there!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645514455707648
+    m_Localized: No problem at all, I'm happy to help!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645604725518336
+    m_Localized: Good luck out there! Hope you make it back safe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652339066466304
+    m_Localized: Hey there. Are you okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652366186835968
+    m_Localized: Not really... I got separated from my sister, Dazzle, when the storm
+      hit. Now, I'm too scared to make it back to her...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652393462394880
+    m_Localized: Oh, that's terrible... Well, I'm heading in that direction myself.
+      If you want, I can help you get back to your sister?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652823500189696
+    m_Localized: Oh, I would be so grateful if you did! I'm too scared to go alone...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652925887344640
+    m_Localized: It would be no problem at all! I'd love the company.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

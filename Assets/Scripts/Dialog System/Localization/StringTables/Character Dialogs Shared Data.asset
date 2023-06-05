@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Character Dialogs Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Character Dialogs
+  m_TableCollectionNameGuidString: 9dfad45b424512a42b85798675b9521f
+  m_Entries:
+  - m_Id: 53992468480
+    m_Key: Lvl1.Spike.Intro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391057165758464
+    m_Key: Lvl1.Blue.Scared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3624986466578432
+    m_Key: Lvl1.Spike.Inquiry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3625164212793344
+    m_Key: Lvl1.Blue.Explain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639721987665920
+    m_Key: Lvl1.Spike.Quest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645238076239872
+    m_Key: Lvl1.Spike.Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645342854148096
+    m_Key: Lvl1.Blue.Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645398088937472
+    m_Key: Lvl1.Spike.Thanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645514455707648
+    m_Key: Lvl1.Blue.Welcome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3645604725518336
+    m_Key: Lvl1.Spike.GoodLuck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652339066466304
+    m_Key: Lvl2.Blue.Intro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652366186835968
+    m_Key: Lvl2.Razzle.Intro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652393462394880
+    m_Key: Lvl2.Blue.Quest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652823500189696
+    m_Key: Lvl2.Razzle.Grateful
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3652925887344640
+    m_Key: Lvl2.Blue.Agreed
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6121471964134244432
+  references:
+    version: 2
+    RefIds:
+    - rid: 6121471964134244432
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1684151243199

@@ -6,11 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Mechanic Test Scene.unity
-    guid: 93a0a625a3e79404eaccd1ce091b919c
+    path: Assets/Scenes/Level1Prototype.unity
+    guid: 60decd55ebd0d884296080353cf0ae73
   - enabled: 1
-    path: Assets/Scenes/OutdoorsScene.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/Scenes/Level2Prototype.unity
+    guid: d190d039c73493c48a9674a8db4da781
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 8dbd88e2e386cbb42abb923025788307
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: 73f4720136e68dd429cf363bc4426886,
+    com.unity.addressableassets: {fileID: 11400000, guid: b1e6d7f036157d84cb4863e97b6b8e92,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 34b9f0df4a0dcb4429a73526723cf7ba,
       type: 2}
