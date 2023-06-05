@@ -1777,6 +1777,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[Graphy]'
       objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_graphyMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_fpsGraphResolution
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_ramGraphResolution
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496292, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_graphModulePosition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22323726, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22323726, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 22424132, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.20019531
@@ -2285,47 +2309,47 @@ PrefabInstance:
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.259367
+      value: 4.917428
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9577982
+      value: -2.9587584
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2708523
+      value: 2.4418292
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.50120795
+      value: 0.50138927
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.49878913
+      value: -0.49860695
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.50120795
+      value: 0.5013892
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595594034664, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49878913
+      value: 0.49860695
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595816355257, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: normal.x
-      value: 0.9999883
+      value: 0.9999845
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595816355257, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: normal.y
-      value: -0.0048375786
+      value: -0.0055645066
       objectReference: {fileID: 0}
     - target: {fileID: 5381661595816355257, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
@@ -2400,12 +2424,12 @@ PrefabInstance:
     - target: {fileID: 5381661596157307636, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9705195
+      value: -2.97244
       objectReference: {fileID: 0}
     - target: {fileID: 5381661596157307636, guid: 97adf3f3ca92a8173b173d3ce6542186,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3588004
+      value: -0.016846657
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97adf3f3ca92a8173b173d3ce6542186, type: 3}
@@ -2678,6 +2702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: coyoteGraceTime
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
+        type: 3}
+      propertyPath: meshRotationSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
         type: 3}
