@@ -19,6 +19,8 @@ public class Speaker : MonoBehaviour
     [HideInInspector] public DialogHitboxType dialogHitboxType;
     [HideInInspector] public float speakRange = 5f;
     [SerializeField] private bool activateInRange = true;
+    [SerializeField] private bool repeatDialogue = true;
+    private bool dialogueFinished = false;
     public List<Dialog> dialog;
     private Sentence currentSentence;
     public static string currentText = "";
@@ -122,6 +124,7 @@ public class Speaker : MonoBehaviour
                     currentSentenceIndex = 0;
                     isDialogActive = false;
                     isSpeaking = false;
+                    if (!repeatDialogue) dialogueFinished = true;
                     player.ChangeState(player.idleState);
                 }
                 else

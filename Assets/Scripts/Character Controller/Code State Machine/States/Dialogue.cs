@@ -10,6 +10,7 @@ public class Dialogue : State
     PlayerStateManager player;
     public override void UpdateState(PlayerStateManager player)
     {
+        player.rb.velocity = new Vector3(0, player.rb.velocity.y, 0);
     }
 
     public override void FixedUpdateState(PlayerStateManager player) { }

@@ -55,6 +55,7 @@ public class Sliding : State
 
         Vector3 horizontalDirection = new Vector3(Mathf.Round(ControlValues.Instance.currentSlideDirection.x), 0, 0);
         player.rb.AddForce(horizontalDirection * player.slideExitLaunchForce, ForceMode.Impulse);
+        player.airMaxSpeed = player.rb.velocity.magnitude;
 
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
