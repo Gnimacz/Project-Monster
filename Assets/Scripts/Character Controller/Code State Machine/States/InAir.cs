@@ -45,8 +45,6 @@ public class InAir : State
 
     public override void ExitState(PlayerStateManager player)
     {
-        player.airMaxSpeed = player.originalAirMaxSpeed;
-
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
@@ -55,7 +53,7 @@ public class InAir : State
     void InAirMovement(PlayerStateManager player)
     {
         float acceleration = player.moveInput.x * player.airAcceleration * Time.deltaTime;
-        if ((acceleration > 0  && player.rb.velocity.x < player.airMaxSpeed) || 
+        if ((acceleration > 0 && player.rb.velocity.x < player.airMaxSpeed) || 
             (acceleration < 0 && player.rb.velocity.x > -player.airMaxSpeed))
             player.rb.velocity += new Vector3(acceleration, 0, 0);
         

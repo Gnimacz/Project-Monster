@@ -35,7 +35,6 @@ public class PlayerStateManager : MonoBehaviour
     public float runMaxSpeed = 5f;
     public float airAcceleration = 5f;
     public float airMaxSpeed = 5f;
-    [NonSerialized] public float originalAirMaxSpeed = 5f; //TODO(Look into a possible better way to handle this hack)
     public float jumpForce = 5f;
     public float climbSpeed = 5f;
     public float slideSpeed = 10f;
@@ -59,7 +58,6 @@ public class PlayerStateManager : MonoBehaviour
         //add current position as checkpoint at the start for testing
         ControlValues.Instance.lastCheckpoint = transform.position;
         ControlValues.Instance.checkpointBacklog.Add(transform.position);
-        originalAirMaxSpeed = airMaxSpeed;
     }
 
     private void OnEnable()
