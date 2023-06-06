@@ -28,20 +28,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3624986466578432
-    m_Localized: Wow, je hoeft niet bang te zijn! Ik zie er misschien groot en eng
-      uit, maar ik ben niet anders dan jij. Hoe dan ook, waar ga je zo snel heen?
-      Het is daar gevaarlijk in deze storm.
+    m_Localized: Wees niet bang! Ik zal je geen pijn doen. Waarom heb je zo veel
+      haast? De storm buiten is erg gevaarlijk.
     m_Metadata:
       m_Items: []
   - m_Id: 3625164212793344
-    m_Localized: Oh... nou ja, ik probeer gewoon terug naar huis te komen. Vind je
-      het erg om aan de kant te gaan zodat ik erdoorheen kan?
+    m_Localized: Ik probeer gewoon terug naar huis te komen. Vind je het erg om aan
+      de kant te gaan zodat ik erdoor kan?
     m_Metadata:
       m_Items: []
   - m_Id: 3639721987665920
-    m_Localized: Nou, zie je, ik heb geprobeerd om daarboven een kers te pakken,
-      maar ik ben te groot om het te halen... Zeg, als je die kers voor me kunt pakken,
-      laat ik je door deze deur gaan!
+    m_Localized: Nou, ik heb geprobeerd een kers die daar boven ligt te pakken, maar
+      ik ben te groot... Zeg, als je die kers voor me kunt pakken, laat ik je erdoor!
     m_Metadata:
       m_Items: []
   - m_Id: 3645238076239872
@@ -68,27 +66,79 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3652339066466304
-    m_Localized: Hallo daar. Gaat het?
+    m_Localized: Hoi. Gaat het?
     m_Metadata:
       m_Items: []
   - m_Id: 3652366186835968
-    m_Localized: Niet echt... toen de storm begon raakte ik mijn zusje Dazzle kwijt.
-      Nu ben ik te bang om haar te zoeken...
+    m_Localized: Ik raakte mijn zusje, Dazzle, kwijt door de storm en ik kan haar
+      niet vinden!
     m_Metadata:
       m_Items: []
   - m_Id: 3652393462394880
-    m_Localized: Oh, dat is verschrikkelijk... Nou, ik ga zelf die kant op. Als je
-      wilt, kan ik je helpen terug te komen naar je zusje?
+    m_Localized: Het spijt me dat te horen... Ik ben op weg naar het huis, dus ik
+      zal kijken of ik haar nog zie.
     m_Metadata:
       m_Items: []
   - m_Id: 3652823500189696
-    m_Localized: Oh, ik zou zo dankbaar zijn als je dat zou willen doen! Ik ben te
-      bang om alleen te gaan...
+    m_Localized: Oh, ik zou je zo dankbaar zijn als je dat deed! Ik zal dit gebied
+      doorzoeken, dus roep maar als je haar vindt.
     m_Metadata:
       m_Items: []
   - m_Id: 3652925887344640
-    m_Localized: Het zou helemaal geen probleem zijn! Ik zou het gezelschap fijn
-      vinden.
+    m_Localized: Zal ik doen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7985397202628608
+    m_Localized: Die vent daar laat me niet door!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7985586869055488
+    m_Localized: Denkt hij echt dat ik helemaal daar naar boven ga voor een kers?
+      Ik ben helemaal niet goed in klimmen...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988182165958656
+    m_Localized: Hey! Ik zag je praten met mijn vriend, Razzle. Ben je hier om te
+      helpen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988253859196928
+    m_Localized: Ja. Ik ben onderweg naar huis, maar ik zal kijken of ik zijn zusje
+      kan vinden.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988383798734848
+    m_Localized: We nemen alle hulp aan die we kunnen krijgen. Voorzichtig met deze
+      modder trouwens. Het is erg glad.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988488341762048
+    m_Localized: Heel erg bedankt dat je me hebt geholpen mijn zusje te vinden!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988578129227776
+    m_Localized: Ik was zo bang zonder mijn broer... Bedankt, vriend!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988657611288576
+    m_Localized: Je mag me Blue noemen. Ik ben gewoon blij dat alles goed is gekomen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988728398557184
+    m_Localized: Ik zal ervoor zorgen dat deze twee vanaf nu bij elkaar blijven.
+      Blijf veilig, Blue!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999725423243264
+    m_Localized: Hij is eindelijk weg! Heb jij dat gedaan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999825562251264
+    m_Localized: Ja. Het enige wat hij wilde was een kers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999929992032256
+    m_Localized: Nou, bedankt voor je hulp. Nu kan ik hier eindelijk weg.
     m_Metadata:
       m_Items: []
   references:
