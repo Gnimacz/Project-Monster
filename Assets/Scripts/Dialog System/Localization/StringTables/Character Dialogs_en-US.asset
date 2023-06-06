@@ -126,6 +126,18 @@ MonoBehaviour:
       there, Blue!
     m_Metadata:
       m_Items: []
+  - m_Id: 7999725423243264
+    m_Localized: Finally! He's gone! Did you do that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999825562251264
+    m_Localized: Yeah. All he wanted was a cherry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999929992032256
+    m_Localized: Well, thanks for doing that. Now I can finally leave this place.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

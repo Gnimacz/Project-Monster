@@ -129,6 +129,18 @@ MonoBehaviour:
       Blijf veilig, Blue!
     m_Metadata:
       m_Items: []
+  - m_Id: 7999725423243264
+    m_Localized: Hij is eindelijk weg! Heb jij dat gedaan?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999825562251264
+    m_Localized: Ja. Het enige wat hij wilde was een kers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999929992032256
+    m_Localized: Nou, bedankt voor je hulp. Nu kan ik hier eindelijk weg.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

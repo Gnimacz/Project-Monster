@@ -135,7 +135,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49506
+  m_Name: pb_Mesh85574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -601,7 +601,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49164
+  m_Name: pb_Mesh85232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1843,7 +1843,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49298
+  m_Name: pb_Mesh85356
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4950,7 +4950,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49312
+  m_Name: pb_Mesh85370
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5312,7 +5312,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49240
+  m_Name: pb_Mesh85312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7063,7 +7063,7 @@ PrefabInstance:
     - target: {fileID: 2539178610149194252, guid: 966efe899ac3d6c4493f8cef5de046ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.52549124
+      value: -1.9745088
       objectReference: {fileID: 0}
     - target: {fileID: 2539178610149194252, guid: 966efe899ac3d6c4493f8cef5de046ef,
         type: 3}
@@ -9826,7 +9826,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49384
+  m_Name: pb_Mesh85442
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10542,7 +10542,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49546
+  m_Name: pb_Mesh85618
   serializedVersion: 10
   m_SubMeshes: []
   m_Shapes:
@@ -10864,7 +10864,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49464
+  m_Name: pb_Mesh85532
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13558,7 +13558,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49178
+  m_Name: pb_Mesh85246
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15189,13 +15189,23 @@ PrefabInstance:
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 494492240}
+      objectReference: {fileID: 2066314638}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 494492242}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -15203,8 +15213,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
       propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: SetDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
@@ -15359,7 +15379,22 @@ PrefabInstance:
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Speaker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Renderer, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Bean Post Cherry
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
@@ -15564,6 +15599,11 @@ PrefabInstance:
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].OnDialogComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
@@ -16907,7 +16947,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh48998
+  m_Name: pb_Mesh85066
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18285,7 +18325,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49330
+  m_Name: pb_Mesh85388
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20045,7 +20085,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49036
+  m_Name: pb_Mesh85104
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21004,7 +21044,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh48968
+  m_Name: pb_Mesh85036
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21337,7 +21377,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh49102
+  m_Name: pb_Mesh85170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22041,7 +22081,7 @@ PrefabInstance:
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
@@ -22050,8 +22090,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
+      propertyPath: dialog.Array.data[1].identifier
+      value: Bean Post Cherry
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
       propertyPath: dialog.Array.data[0].sentences.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
@@ -22061,6 +22111,21 @@ PrefabInstance:
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[0].sentences.Array.data[1].name
+      value: Bean
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[0].name
+      value: Bean
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[1].name
+      value: Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[2].name
       value: Bean
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
@@ -22075,12 +22140,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[0].localizedSentence.m_TableEntryReference.m_KeyId
+      value: 7999725423243264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[1].localizedSentence.m_TableEntryReference.m_KeyId
+      value: 7999825562251264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[2].localizedSentence.m_TableEntryReference.m_KeyId
+      value: 7999929992032256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
       propertyPath: dialog.Array.data[0].sentences.Array.data[0].localizedSentence.m_TableReference.m_TableCollectionName
       value: GUID:9dfad45b424512a42b85798675b9521f
       objectReference: {fileID: 0}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: dialog.Array.data[0].sentences.Array.data[1].localizedSentence.m_TableReference.m_TableCollectionName
+      value: GUID:9dfad45b424512a42b85798675b9521f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[0].localizedSentence.m_TableReference.m_TableCollectionName
+      value: GUID:9dfad45b424512a42b85798675b9521f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[1].localizedSentence.m_TableReference.m_TableCollectionName
+      value: GUID:9dfad45b424512a42b85798675b9521f
+      objectReference: {fileID: 0}
+    - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+        type: 3}
+      propertyPath: dialog.Array.data[1].sentences.Array.data[2].localizedSentence.m_TableReference.m_TableCollectionName
       value: GUID:9dfad45b424512a42b85798675b9521f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22091,6 +22186,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2066314636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2066314638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2066314636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83680854e1d9cc49b7977365fb650da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2117430583
 PrefabInstance:
   m_ObjectHideFlags: 0

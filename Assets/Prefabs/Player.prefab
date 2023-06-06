@@ -218,20 +218,20 @@ MonoBehaviour:
   horizontalDrag: 10
   runAcceleration: 200
   runMaxSpeed: 8
+  meshRotationSpeed: 10
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
   airAcceleration: 50
   airMaxSpeed: 8
-  jumpForce: 20
+  jumpForce: 15
+  coyoteGraceTime: 0.15
+  maxJumpDuration: 0.3
+  jumpFloatForce: 15
   climbSpeed: 7
   slideSpeed: 15
   climbExitJumpForce: 8
-  slideExitLaunchForce: 10
-  coyoteGraceTime: 0.15
-  meshRotationSpeed: 10
-  groundRayLength: 1.5
-  isGrounded: 1
-  groundLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  slideExitLaunchForce: 3
 --- !u!114 &9091859297822107739
 MonoBehaviour:
   m_ObjectHideFlags: 0
