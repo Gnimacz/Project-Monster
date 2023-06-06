@@ -28,20 +28,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3624986466578432
-    m_Localized: Woah, there's no need to be scared! I may look big and scary, but
-      I'm no different from you. Anyway, where are you going in such a hurry? It's
-      dangerous out there in this storm.
+    m_Localized: Don't be scared! I won't hurt you. Where are you going in such a
+      hurry? It's dangerous out there in this storm.
     m_Metadata:
       m_Items: []
   - m_Id: 3625164212793344
-    m_Localized: Oh... well, I'm just trying to make my way back home. Do you mind
-      moving so I can pass through?
+    m_Localized: I'm just trying to make my way back home. Do you mind moving so
+      I can pass through?
     m_Metadata:
       m_Items: []
   - m_Id: 3639721987665920
-    m_Localized: Well, you see, I've been trying to get a cherry from up there but
-      I'm too big to make it... Say, if you can get that cherry for me, I'll let
-      you pass through this door no problem!
+    m_Localized: Well, I've been trying to get a cherry from up there but I'm too
+      big... Say, if you can get that cherry for me, I'll let you pass through!
     m_Metadata:
       m_Items: []
   - m_Id: 3645238076239872
@@ -71,21 +69,73 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3652366186835968
-    m_Localized: Not really... I got separated from my sister, Dazzle, when the storm
-      hit. Now, I'm too scared to make it back to her...
+    m_Localized: I got separated from my sister, Dazzle, when the storm hit and I
+      can't find her!
     m_Metadata:
       m_Items: []
   - m_Id: 3652393462394880
-    m_Localized: Oh, that's terrible... Well, I'm heading in that direction myself.
-      If you want, I can help you get back to your sister?
+    m_Localized: Sorry to hear that... I'm headed towards the house, so I'll keep
+      an eye out for her.
     m_Metadata:
       m_Items: []
   - m_Id: 3652823500189696
-    m_Localized: Oh, I would be so grateful if you did! I'm too scared to go alone...
+    m_Localized: Oh, I would be so grateful if you did! I'll be searching this area
+      so just yell if you find her.
     m_Metadata:
       m_Items: []
   - m_Id: 3652925887344640
-    m_Localized: It would be no problem at all! I'd love the company.
+    m_Localized: Will do!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7985397202628608
+    m_Localized: That guy over there won't let me pass!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7985586869055488
+    m_Localized: He really thinks I'll go up there for a cherry? I'm a terrible climber...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988182165958656
+    m_Localized: Hey! I saw you talking to my friend, Razzle. Are you here to help?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988253859196928
+    m_Localized: Yes. I'm making my way through here, but I'll keep an eye out for
+      his sister.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988383798734848
+    m_Localized: We'll take any help we can get. Careful with this mud, by the way.
+      It's very slippery.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988488341762048
+    m_Localized: Thank you so much for helping me find my sister!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988578129227776
+    m_Localized: I was so scared without my brother... Thank you, friend!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988657611288576
+    m_Localized: Please, call me Blue. I'm just glad everything turned out okay!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7988728398557184
+    m_Localized: I'll make sure these two stay together from now on. Stay safe out
+      there, Blue!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999725423243264
+    m_Localized: Finally! He's gone! Did you do that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999825562251264
+    m_Localized: Yeah. All he wanted was a cherry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7999929992032256
+    m_Localized: Well, thanks for doing that. Now I can finally leave this place.
     m_Metadata:
       m_Items: []
   references:

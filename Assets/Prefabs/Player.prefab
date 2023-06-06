@@ -3314,17 +3314,17 @@ MonoBehaviour:
   meshRotationSpeed: 10
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   airAcceleration: 50
   airMaxSpeed: 8
-  jumpForce: 20
+  jumpForce: 15
   coyoteGraceTime: 0.15
-  maxJumpDuration: 2
-  jumpFloatForce: 1
+  maxJumpDuration: 0.3
+  jumpFloatForce: 15
   climbSpeed: 7
   slideSpeed: 15
   climbExitJumpForce: 8
-  slideExitLaunchForce: 10
+  slideExitLaunchForce: 3
 --- !u!114 &9091859297822107739
 MonoBehaviour:
   m_ObjectHideFlags: 0
