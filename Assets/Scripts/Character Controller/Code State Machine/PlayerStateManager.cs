@@ -91,7 +91,7 @@ public class PlayerStateManager : MonoBehaviour
         currentState.FixedUpdateState(this);
 
         //cast a ray downard from the bottom of the character collider to see if we are on the ground
-        isGrounded = Physics.OverlapSphere(feet.position, 0.4f, ~LayerMask.GetMask("Player")).Length > 0;
+        isGrounded = Physics.OverlapSphere(feet.position, 0.4f, /*~LayerMask.GetMask("Player"))*/groundLayerMask).Length > 0;
         if (isGrounded)
         {
             ControlValues.Instance.lastGroundedTime = Time.timeSinceLevelLoad;
