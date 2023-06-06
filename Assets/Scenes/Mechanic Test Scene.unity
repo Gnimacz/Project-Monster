@@ -2512,7 +2512,7 @@ PrefabInstance:
     - target: {fileID: 1722151169204725764, guid: ed5a3937f0da44a4d83de743222bfb86,
         type: 3}
       propertyPath: launchForce
-      value: 19.4
+      value: 27.13
       objectReference: {fileID: 0}
     - target: {fileID: 1722151169204725764, guid: ed5a3937f0da44a4d83de743222bfb86,
         type: 3}
@@ -2578,6 +2578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458195142431940949, guid: ed5a3937f0da44a4d83de743222bfb86,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5a3937f0da44a4d83de743222bfb86, type: 3}
@@ -2779,13 +2784,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
         type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
+        type: 3}
       propertyPath: horizontalDrag
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
         type: 3}
+      propertyPath: jumpFloatForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
+        type: 3}
       propertyPath: coyoteGraceTime
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
+        type: 3}
+      propertyPath: maxJumpDuration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9091859297822107738, guid: 843423a3ec0a09045afcf92a689768fc,
         type: 3}
