@@ -1956,7 +1956,7 @@ Animator:
   m_GameObject: {fileID: 5722376556084359858}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 995a8e9fe3578b143ba790cfff8c700c, type: 2}
+  m_Controller: {fileID: 9100000, guid: e5acc952c69a0e62a9c293d16595109a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3308,6 +3308,7 @@ MonoBehaviour:
   rb: {fileID: 9091859297822107741}
   feet: {fileID: 9128862613470445196}
   mesh: {fileID: 8438528061664255378}
+  animator: {fileID: 1330165734497021709}
   horizontalDrag: 10
   runAcceleration: 200
   runMaxSpeed: 8

@@ -30,6 +30,7 @@ public class PlayerStateManager : MonoBehaviour
     public Rigidbody rb;
     public Transform feet;
     public Transform mesh;
+    public Animator animator;
 
     [Space(10)]
     [Header("General movement")]

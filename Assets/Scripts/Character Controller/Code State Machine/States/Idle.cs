@@ -28,6 +28,8 @@ public class Idle : State
 
     public override void EnterState(PlayerStateManager player)
     {
+        player.animator.SetTrigger("Idle");
+        
         this.player = player;
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;

@@ -50,6 +50,8 @@ public class Running : State
 
     public override void EnterState(PlayerStateManager player)
     {
+        player.animator.SetTrigger("Run");
+        
         this.player = player;
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
