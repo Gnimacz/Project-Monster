@@ -225,7 +225,7 @@ MonoBehaviour:
   slideSpeed: 15
   climbExitJumpForce: 8
   slideExitLaunchForce: 10
-  coyoteGraceTime: 0.1
+  coyoteGraceTime: 0.15
   meshRotationSpeed: 10
   groundRayLength: 1.5
   isGrounded: 1
