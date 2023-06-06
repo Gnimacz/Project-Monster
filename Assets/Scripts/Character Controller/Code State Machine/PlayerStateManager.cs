@@ -31,26 +31,29 @@ public class PlayerStateManager : MonoBehaviour
     public Transform feet;
     public Transform mesh;
 
+    [Space(10)]
+    [Header("General movement")]
     public float horizontalDrag = 5f;
     public float runAcceleration = 5f;
     public float runMaxSpeed = 5f;
+    public float meshRotationSpeed = 0.1f;
+    [SerializeField] private LayerMask groundLayerMask;
+    [Space(10)]
+    [Header("Jumping variables")]
     public float airAcceleration = 5f;
     public float airMaxSpeed = 5f;
     public float jumpForce = 5f;
+    public float coyoteGraceTime = 0.1f;
+    public float maxJumpDuration = 2f;
+    public float jumpFloatForce = 1f;
+    [Space(10)]
+    [Header("Climbing and sliding")]
     public float climbSpeed = 5f;
     public float slideSpeed = 10f;
     public float climbExitJumpForce = 3f;
     public float slideExitLaunchForce = 3f;
-    public float coyoteGraceTime = 0.1f;
-    public float meshRotationSpeed = 0.1f;
     
-
-    public RaycastHit groundRayCastResults;
-    [SerializeField] private float groundRayLength = 1.5f;
-    public bool isGrounded = false; //{ get; private set; }
-    
-    [SerializeField] private LayerMask groundLayerMask;
-
+    [NonSerialized] public bool isGrounded = false; //{ get; private set; }
     public Vector2 moveInput { get; private set; }
     #endregion 
 
@@ -88,7 +91,7 @@ public class PlayerStateManager : MonoBehaviour
         currentState.FixedUpdateState(this);
 
         //cast a ray downard from the bottom of the character collider to see if we are on the ground
-        isGrounded = Physics.OverlapSphere(feet.position, 0.4f, ~LayerMask.GetMask("Player")).Length > 0;
+        isGrounded = Physics.OverlapSphere(feet.position, 0.4f, /*~LayerMask.GetMask("Player"))*/groundLayerMask).Length > 0;
         if (isGrounded)
         {
             ControlValues.Instance.lastGroundedTime = Time.timeSinceLevelLoad;
