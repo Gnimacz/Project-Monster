@@ -7,6 +7,7 @@ using UnityEngine.Localization;
 using UnityEngine.InputSystem;
 using TMPro;
 using MonsterInput;
+using UnityEngine.UI;
 
 
 public class Speaker : MonoBehaviour
@@ -31,8 +32,8 @@ public class Speaker : MonoBehaviour
     private bool isDialogActive = false;
     [SerializeField] private bool isWithinRange = false;
     [SerializeField] private bool isDialogComplete = false;
-    [SerializeField] private SphereCollider speakCollider;
-    [SerializeField] private BoxCollider boxCollider;
+    [SerializeField] public SphereCollider speakCollider;
+    [SerializeField] public BoxCollider boxCollider;
     [HideInInspector] public Vector3 boxSize = new Vector3(1, 1, 1);
     [HideInInspector] public Vector3 boxPosition = new Vector3(0, 0, 0);
     [HideInInspector] public Transform boxTransform;
@@ -55,12 +56,12 @@ public class Speaker : MonoBehaviour
         dialogCanvas.SetActive(false);
 
         InputEvents.InteractButton += OnInteract;
-        InputEvents.UIInteractButton += OnInteract;
+        InputEvents.UIInteractButton += OnUIInteract;
     }
     private void OnDisable()
     {
         InputEvents.InteractButton -= OnInteract;
-        InputEvents.UIInteractButton -= OnInteract;
+        InputEvents.UIInteractButton -= OnUIInteract;
     }
     public void StartDialog()
     {
@@ -71,7 +72,11 @@ public class Speaker : MonoBehaviour
         .localizedSentence.GetLocalizedString()));
         isDialogActive = true;
         isSpeaking = true;
-        InputEvents.playerInput.SwitchCurrentActionMap("UI");
+        isDialogComplete = false;
+        if (InputEvents.playerInput.currentActionMap.name != "UI")
+        {
+            InputEvents.playerInput.SwitchCurrentActionMap("UI");
+        }
 
     }
 
@@ -93,28 +98,18 @@ public class Speaker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        isWithinRange = true;
         if (!isDialogComplete && activateInRange && other.gameObject.layer == LayerMask.NameToLayer("Player") && !isDialogActive)
         {
             StartDialog();
-            isWithinRange = true;
             player = other.GetComponent<PlayerStateManager>();
             player.ChangeState(player.dialogueState);
         }
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            isWithinRange = true;
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            isWithinRange = false;
-        }
+        isWithinRange = false;
+        Debug.Log("Player exited dialog range");
     }
 
     // private void Update()
@@ -156,9 +151,13 @@ public class Speaker : MonoBehaviour
         {
             StartDialog();
         }
+    }
+
+    private void OnUIInteract(object sender, InputAction.CallbackContext context)
+    {
         if (isDialogActive && context.started)
         {
-            if (isSpeaking && currentSentenceIndex <= dialog[currentDialogIndex].sentences.Length - 1)
+            if (InputEvents.playerInput.currentActionMap.name == "UI" && isSpeaking && currentSentenceIndex <= dialog[currentDialogIndex].sentences.Length - 1)
             {
                 Debug.LogWarning("Skipping dialog");
                 StopAllCoroutines();
@@ -168,7 +167,7 @@ public class Speaker : MonoBehaviour
                 dialog[currentDialogIndex].sentences[currentSentenceIndex].OnSentenceComplete?.Invoke();
                 currentSentenceIndex++;
             }
-            else if (currentSentenceIndex > dialog[currentDialogIndex].sentences.Length - 1)
+            else if (context.phase == InputActionPhase.Started && currentSentenceIndex > dialog[currentDialogIndex].sentences.Length - 1)
             {
                 Debug.Log("End of dialog");
                 dialogCanvas.SetActive(false);
@@ -207,6 +206,7 @@ public class Speaker : MonoBehaviour
     {
         if (dialogHitboxType == DialogHitboxType.Sphere)
         {
+            if (speakCollider != null) DestroyImmediate(speakCollider);
             speakCollider = gameObject.AddComponent<SphereCollider>();
             speakCollider.enabled = true;
             speakCollider.radius = speakRange * 0.325f;
@@ -216,13 +216,14 @@ public class Speaker : MonoBehaviour
         }
         else if (dialogHitboxType == DialogHitboxType.Box)
         {
+            if (boxCollider != null) DestroyImmediate(boxCollider);
             boxCollider = gameObject.AddComponent<BoxCollider>();
             boxCollider.enabled = true;
             boxCollider.isTrigger = true;
             // boxCollider.size = boxCollider.transform.InverseTransformDirection(boxSize);//boxSize;
             // boxCollider.transform.localScale = boxSize;
-            boxCollider.size = boxSize / 3;
-            boxCollider.center = boxPosition / 3;
+            boxCollider.size = boxSize;
+            boxCollider.center = boxPosition;
         }
     }
 
@@ -235,6 +236,22 @@ public class Speaker : MonoBehaviour
         else if (dialogHitboxType == DialogHitboxType.Box)
         {
             DestroyImmediate(boxCollider);
+        }
+    }
+
+    public void SetColliderProperties()
+    {
+        if (dialogHitboxType == DialogHitboxType.Sphere)
+        {
+            speakCollider.radius = speakRange;
+            speakCollider.transform.InverseTransformPoint(transform.position);
+            speakCollider.transform.position = transform.position;
+            speakCollider.isTrigger = true;
+        }
+        else if (dialogHitboxType == DialogHitboxType.Box)
+        {
+            boxCollider.size = boxSize;
+            boxCollider.center = boxPosition;
         }
     }
 
