@@ -8,6 +8,7 @@ using MonsterInput;
 public class Climbing : State
 {
     PlayerStateManager player;
+    private double timeAtStateEnter;
     public override void UpdateState(PlayerStateManager player)
     {
         player.rb.velocity = Vector3.zero;
@@ -52,6 +53,7 @@ public class Climbing : State
     {
         this.player = player;
         player.rb.velocity = Vector3.zero;
+        timeAtStateEnter = Time.timeSinceLevelLoad;
 
         Vector3 closetsPoint = Utils.ClosestPointOnLineSegment(
             ControlValues.Instance.currentClimbStart,
@@ -84,9 +86,8 @@ public class Climbing : State
 
     private void OnJump(object sender, InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && Time.timeSinceLevelLoad - timeAtStateEnter > player.climbEnterExitCooldown)
         {
-            Debug.Log("Jumping from climbing state");
             player.ChangeState(player.jumpingState);
             return;
         }

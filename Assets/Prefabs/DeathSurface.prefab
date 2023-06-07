@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8121318741204149845}
   - component: {fileID: 8121318741204149844}
   - component: {fileID: 8121318741204149847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: DeathSurface
   m_Icon: {fileID: 0}
@@ -178,6 +178,8 @@ MonoBehaviour:
   startPoint: {fileID: 8121318740452424355}
   endPoint: {fileID: 8121318741826452163}
   Collision: {fileID: 8121318741204149846}
+  normal: {x: 0, y: 0, z: 0}
+  invertNormal: 0
 --- !u!1 &8121318741826452162
 GameObject:
   m_ObjectHideFlags: 0

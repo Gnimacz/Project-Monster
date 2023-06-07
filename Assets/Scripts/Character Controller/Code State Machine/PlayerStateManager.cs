@@ -53,6 +53,7 @@ public class PlayerStateManager : MonoBehaviour
     public float slideSpeed = 10f;
     public float climbExitJumpForce = 3f;
     public float slideExitLaunchForce = 3f;
+    public float climbEnterExitCooldown = 0.5f;
     
     [NonSerialized] public bool isGrounded = false; //{ get; private set; }
     public Vector2 moveInput { get; private set; }

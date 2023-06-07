@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5381661595594034677}
   - component: {fileID: 5381661595594034666}
   - component: {fileID: 5381661595594034676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: ClimbSurface
   m_Icon: {fileID: 0}
@@ -178,6 +178,8 @@ MonoBehaviour:
   startPoint: {fileID: 5381661596157307636}
   endPoint: {fileID: 5381661595288255207}
   Collision: {fileID: 5381661595594034664}
+  normal: {x: -0, y: 1, z: 0}
+  invertNormal: 0
   climbOrientation: 0
 --- !u!1 &5381661596157307637
 GameObject:
