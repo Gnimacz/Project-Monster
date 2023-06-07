@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 754098714334399897}
   - component: {fileID: 754098714334399896}
   - component: {fileID: 754098714334399899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision
   m_TagString: SlideSurface
   m_Icon: {fileID: 0}
@@ -147,6 +147,8 @@ MonoBehaviour:
   startPoint: {fileID: 754098716124287343}
   endPoint: {fileID: 754098714812911887}
   Collision: {fileID: 754098714334399898}
+  normal: {x: 0, y: 0, z: 0}
+  invertNormal: 0
 --- !u!1 &754098714812911886
 GameObject:
   m_ObjectHideFlags: 0
