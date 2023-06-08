@@ -80,6 +80,8 @@ public class Climbing : State
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
+
+        ControlValues.Instance.lastClimbingTime = Time.timeSinceLevelLoad;
     }
 
     private void OnMove(object sender, InputAction.CallbackContext context) { }
