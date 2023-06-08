@@ -16,9 +16,8 @@ public class SpeakerEditor : Editor
     {
         speaker = (Speaker)target;
         speakRange = speaker.speakRange;
-        speakerCollisionType = speaker.dialogHitboxType;
-        boxSize = speaker.transform.InverseTransformDirection(speaker.boxSize);
-        boxPosition = speaker.boxPosition;
+        boxSize = new Vector3(speaker.boxSize.x * speaker.transform.localScale.x, speaker.boxSize.y * speaker.transform.localScale.y, speaker.boxSize.z * speaker.transform.localScale.z);
+        boxPosition = new Vector3(speaker.boxPosition.x * speaker.transform.localScale.x, speaker.boxPosition.y * speaker.transform.localScale.y, speaker.boxPosition.z * speaker.transform.localScale.z);
         speakerCollisionType = speaker.dialogHitboxType;
 
         // speaker.gameObject.transform.hideFlags = HideFlags.HideInInspector;
@@ -41,6 +40,21 @@ public class SpeakerEditor : Editor
         {
             Undo.RecordObject(speaker, "changed dialog hitbox type");
             speaker.dialogHitboxType = speakerCollisionType;
+            if (speakerCollisionType == Speaker.DialogHitboxType.Box)
+            {
+
+                if (speaker.boxCollider == null)
+                {
+                    speaker.boxCollider = speaker.gameObject.AddComponent<BoxCollider>();
+                }
+                speaker.boxSize = boxSize;
+                speaker.boxPosition = boxPosition;
+                speaker.SetColliderProperties();
+            }
+            else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
+            {
+                speaker.speakRange = speakRange;
+            }
             EditorUtility.SetDirty(speaker);
         }
         if (speakerCollisionType == Speaker.DialogHitboxType.Box)
@@ -53,8 +67,7 @@ public class SpeakerEditor : Editor
             if (EditorGUI.EndChangeCheck())
             {
                 Undo.RecordObject(speaker, "changed box size or position");
-                speaker.boxSize = boxSize;
-                speaker.boxPosition = boxPosition;
+                SetSizeVariables();
                 EditorUtility.SetDirty(speaker);
             }
         }
@@ -66,7 +79,7 @@ public class SpeakerEditor : Editor
             if (EditorGUI.EndChangeCheck())
             {
                 Undo.RecordObject(speaker, "changed speak range");
-                speaker.speakRange = speakRange;
+                SetSizeVariables();
                 EditorUtility.SetDirty(speaker);
             }
         }
@@ -91,7 +104,7 @@ public class SpeakerEditor : Editor
                         boxPosition = newBoxPosition - speaker.transform.position;
                         // boxPosition = speaker.transform.InverseTransformVector(newBoxPosition - speaker.transform.position);
                         Debug.Log(boxPosition);
-                        speaker.boxPosition = boxPosition;
+                        SetSizeVariables();
                         EditorUtility.SetDirty(speaker);
                     }
                 }
@@ -105,7 +118,7 @@ public class SpeakerEditor : Editor
                         boxSize = newBoxSize;
                         //transform the box size to world space
                         boxSize = newBoxSize;
-                        speaker.boxSize = boxSize;
+                        SetSizeVariables();
                         EditorUtility.SetDirty(speaker);
                     }
                 }
@@ -121,6 +134,13 @@ public class SpeakerEditor : Editor
 
             default: break;
         }
+    }
+
+    private void SetSizeVariables()
+    {
+        speaker.boxSize = speaker.transform.TransformVector(new Vector3(boxSize.x / speaker.transform.localScale.x, boxSize.y / speaker.transform.localScale.y, boxSize.z / speaker.transform.localScale.z));
+        speaker.boxPosition = speaker.transform.TransformVector(new Vector3(boxPosition.x / speaker.transform.localScale.x, boxPosition.y / speaker.transform.localScale.y, boxPosition.z / speaker.transform.localScale.z));
+        speaker.speakRange = speakRange;
     }
 
     private void OnDrawGizmos()

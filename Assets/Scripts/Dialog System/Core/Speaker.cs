@@ -206,18 +206,15 @@ public class Speaker : MonoBehaviour
     {
         if (dialogHitboxType == DialogHitboxType.Sphere)
         {
-            if (speakCollider != null) DestroyImmediate(speakCollider);
-            speakCollider = gameObject.AddComponent<SphereCollider>();
+            if (speakCollider = null) { speakCollider = gameObject.AddComponent<SphereCollider>(); }
             speakCollider.enabled = true;
             speakCollider.radius = speakRange * 0.325f;
-            speakCollider.transform.InverseTransformPoint(transform.position);
             speakCollider.transform.position = transform.position;
             speakCollider.isTrigger = true;
         }
         else if (dialogHitboxType == DialogHitboxType.Box)
         {
-            if (boxCollider != null) DestroyImmediate(boxCollider);
-            boxCollider = gameObject.AddComponent<BoxCollider>();
+            if (boxCollider != null){ boxCollider = gameObject.AddComponent<BoxCollider>(); }
             boxCollider.enabled = true;
             boxCollider.isTrigger = true;
             // boxCollider.size = boxCollider.transform.InverseTransformDirection(boxSize);//boxSize;
