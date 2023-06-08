@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SimpleLevelSwitch : MonoBehaviour
 {
 
-    public string levelToLoad;
+    [HideInInspector] public string levelToLoad;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
