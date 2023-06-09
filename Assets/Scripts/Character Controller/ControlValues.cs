@@ -24,6 +24,7 @@ public class ControlValues : MonoBehaviour
     public Vector3 currentSurfaceNormal;
     public List<Vector3> checkpointBacklog = new List<Vector3>();
     public float lastGroundedTime;
+    public float lastClimbingTime;
     public Quaternion targetMeshRotation;
 
     private void Awake()

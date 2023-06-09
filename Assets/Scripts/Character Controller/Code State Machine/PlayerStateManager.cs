@@ -139,7 +139,10 @@ public class PlayerStateManager : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //this has to be here too so you can enter the climbing state without leaving the area
-        if (other.tag == "ClimbSurface" && rb.velocity.y <= 0 && currentState != climbingState)
+        if (other.tag == "ClimbSurface" 
+            && rb.velocity.y <= 0 
+            && currentState != climbingState 
+            && Time.timeSinceLevelLoad - ControlValues.Instance.lastClimbingTime > climbEnterExitCooldown)
         {
             ClimbSurface climbSurface = other.transform.parent.GetComponent<ClimbSurface>();
             
