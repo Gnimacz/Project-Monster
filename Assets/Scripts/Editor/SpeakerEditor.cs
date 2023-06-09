@@ -15,21 +15,35 @@ public class SpeakerEditor : Editor
     private void OnEnable()
     {
         speaker = (Speaker)target;
-        speakRange = speaker.speakRange;
-        boxSize = new Vector3(speaker.boxSize.x * speaker.transform.localScale.x, speaker.boxSize.y * speaker.transform.localScale.y, speaker.boxSize.z * speaker.transform.localScale.z);
-        boxPosition = new Vector3(speaker.boxPosition.x * speaker.transform.localScale.x, speaker.boxPosition.y * speaker.transform.localScale.y, speaker.boxPosition.z * speaker.transform.localScale.z);
-        speakerCollisionType = speaker.dialogHitboxType;
-
-        // speaker.gameObject.transform.hideFlags = HideFlags.HideInInspector;
-
         Tools.hidden = true;
-        Undo.undoRedoPerformed += OnUndoRedo;
+        speakerCollisionType = speaker.dialogHitboxType;
+        boxPosition = speaker.boxPosition;
+        boxSize = speaker.boxSize;
+        speakRange = speaker.speakRange;
+        // Undo.undoRedoPerformed += OnUndoRedo;
+        if (speaker.boxCollider == null)
+        {
+            speaker.boxCollider = speaker.gameObject.AddComponent<BoxCollider>();
+        }
+        if (speaker.speakCollider == null)
+        {
+            speaker.speakCollider = speaker.gameObject.AddComponent<SphereCollider>();
+
+        }
+        if (speakerCollisionType == Speaker.DialogHitboxType.Box)
+        {
+            speaker.speakCollider.enabled = false;
+        }
+        else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
+        {
+            speaker.speakCollider.enabled = true;
+        }
     }
 
     private void OnDisable()
     {
         Tools.hidden = false;
-        Undo.undoRedoPerformed -= OnUndoRedo;
+        // Undo.undoRedoPerformed -= OnUndoRedo;
     }
 
     public override void OnInspectorGUI()
@@ -47,134 +61,123 @@ public class SpeakerEditor : Editor
                 {
                     speaker.boxCollider = speaker.gameObject.AddComponent<BoxCollider>();
                 }
-                speaker.boxSize = boxSize;
-                speaker.boxPosition = boxPosition;
-                speaker.SetColliderProperties();
+                if (speaker.speakCollider != null) speaker.speakCollider.enabled = false;
+                if (!speaker.boxCollider.enabled) speaker.boxCollider.enabled = true;
+                if (!speaker.boxCollider.isTrigger) speaker.boxCollider.isTrigger = true;
             }
             else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
             {
                 speaker.speakRange = speakRange;
+                if (speaker.speakCollider == null)
+                {
+                    speaker.speakCollider = speaker.gameObject.AddComponent<SphereCollider>();
+                    speaker.speakCollider.enabled = true;
+                    speaker.speakCollider.isTrigger = true;
+                }
+                if (speaker.boxCollider != null) speaker.boxCollider.enabled = false;
+                speaker.speakCollider.enabled = true;
             }
             EditorUtility.SetDirty(speaker);
         }
-        if (speakerCollisionType == Speaker.DialogHitboxType.Box)
-        {
-            EditorGUILayout.LabelField("Box Settings", EditorStyles.boldLabel);
-            EditorGUI.BeginChangeCheck();
-            boxSize = EditorGUILayout.Vector3Field("Box Size", boxSize);
-            boxPosition = EditorGUILayout.Vector3Field("Box Position", boxPosition);
+        #region old code
+        // if (speakerCollisionType == Speaker.DialogHitboxType.Box)
+        // {
+        //     EditorGUILayout.LabelField("Box Settings", EditorStyles.boldLabel);
+        //     EditorGUI.BeginChangeCheck();
+        //     boxSize = EditorGUILayout.Vector3Field("Box Size", boxSize);
+        //     boxPosition = EditorGUILayout.Vector3Field("Box Position", boxPosition);
 
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(speaker, "changed box size or position");
-                SetSizeVariables();
-                EditorUtility.SetDirty(speaker);
-            }
-        }
-        else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
-        {
-            EditorGUILayout.LabelField("Sphere Settings", EditorStyles.boldLabel);
-            EditorGUI.BeginChangeCheck();
-            speakRange = EditorGUILayout.FloatField("Speak Range", speakRange);
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(speaker, "changed speak range");
-                SetSizeVariables();
-                EditorUtility.SetDirty(speaker);
-            }
-        }
+        //     if (EditorGUI.EndChangeCheck())
+        //     {
+        //         Undo.RecordObject(speaker, "changed box size or position");
+        //         SetSizeVariables();
+        //         EditorUtility.SetDirty(speaker);
+        //     }
+        // }
+        // else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
+        // {
+        //     EditorGUILayout.LabelField("Sphere Settings", EditorStyles.boldLabel);
+        //     EditorGUI.BeginChangeCheck();
+        //     speakRange = EditorGUILayout.FloatField("Speak Range", speakRange);
+        //     if (EditorGUI.EndChangeCheck())
+        //     {
+        //         Undo.RecordObject(speaker, "changed speak range");
+        //         SetSizeVariables();
+        //         EditorUtility.SetDirty(speaker);
+        //     }
+        // }
+        #endregion
         base.OnInspectorGUI();
     }
 
-    private void OnSceneGUI()
+
+    void OnSceneGUI()
     {
-        if (speaker is null) return;
-        switch (speakerCollisionType)
+        if (speakerCollisionType == Speaker.DialogHitboxType.Box)
         {
-            case Speaker.DialogHitboxType.Box:
-
-                //create handles to move the cube around and update the variables accordingly
-                if (Tools.current == Tool.Move)
-                {
-                    EditorGUI.BeginChangeCheck();
-                    Vector3 newBoxPosition = Handles.PositionHandle(speaker.transform.position + boxPosition, Quaternion.identity);
-                    if (EditorGUI.EndChangeCheck())
-                    {
-                        Undo.RecordObject(speaker, "changed box position");
-                        boxPosition = newBoxPosition - speaker.transform.position;
-                        // boxPosition = speaker.transform.InverseTransformVector(newBoxPosition - speaker.transform.position);
-                        Debug.Log(boxPosition);
-                        SetSizeVariables();
-                        EditorUtility.SetDirty(speaker);
-                    }
-                }
-                if (Tools.current == Tool.Scale)
-                {
-                    EditorGUI.BeginChangeCheck();
-                    Vector3 newBoxSize = Handles.ScaleHandle(boxSize, speaker.transform.position + boxPosition, Quaternion.identity);
-                    if (EditorGUI.EndChangeCheck())
-                    {
-                        Undo.RecordObject(speaker, "changed box size");
-                        boxSize = newBoxSize;
-                        //transform the box size to world space
-                        boxSize = newBoxSize;
-                        SetSizeVariables();
-                        EditorUtility.SetDirty(speaker);
-                    }
-                }
-                //draw the box
-                Handles.color = Color.green;
-                Handles.DrawWireCube(speaker.transform.position + boxPosition, boxSize);
-                break;
-            case Speaker.DialogHitboxType.Sphere:
-                Handles.color = Color.green;
-                Handles.DrawWireDisc(speaker.transform.position, Camera.current ? Camera.current.transform.forward : Vector3.up, speakRange);
-                Handles.DrawGizmos(Camera.current);
-                break;
-
-            default: break;
+            DrawBoxEditor();
+        }
+        else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
+        {
+            DrawSphereEditor();
         }
     }
 
-    private void SetSizeVariables()
+    void DrawBoxEditor()
     {
-        speaker.boxSize = speaker.transform.TransformVector(new Vector3(boxSize.x / speaker.transform.localScale.x, boxSize.y / speaker.transform.localScale.y, boxSize.z / speaker.transform.localScale.z));
-        speaker.boxPosition = speaker.transform.TransformVector(new Vector3(boxPosition.x / speaker.transform.localScale.x, boxPosition.y / speaker.transform.localScale.y, boxPosition.z / speaker.transform.localScale.z));
-        speaker.speakRange = speakRange;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (speaker is null) return;
-        switch (speakerCollisionType)
+        EditorGUI.BeginChangeCheck();
+        if (Tools.current == Tool.Move)
         {
-            case Speaker.DialogHitboxType.Box:
-                Gizmos.color = Color.blue;
-                Gizmos.DrawWireCube(speaker.transform.position + boxPosition, boxSize);
-                break;
-            case Speaker.DialogHitboxType.Sphere:
-                Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere(speaker.transform.position, speakRange);
-                break;
-
-            default: break;
+            Vector3 newBoxPosition = Handles.PositionHandle(speaker.transform.position + speaker.transform.TransformVector(speaker.boxCollider.center), Quaternion.identity);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(target, "Changed Speak Box Collider Position");
+                EditorUtility.SetDirty(speaker);
+                speaker.boxCollider.center = speaker.transform.InverseTransformVector(newBoxPosition - speaker.transform.position);
+            }
         }
+        else if (Tools.current == Tool.Scale)
+        {
+            Vector3 newBoxScale = Handles.ScaleHandle(speaker.transform.localScale + speaker.transform.TransformVector(speaker.boxCollider.size), speaker.transform.position + speaker.transform.TransformVector(speaker.boxCollider.center), Quaternion.identity);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(target, "Changed Speak Box Collider Size");
+                EditorUtility.SetDirty(speaker);
+                speaker.boxCollider.size = speaker.transform.InverseTransformVector(newBoxScale - speaker.transform.localScale);
+            }
+        }
+
+        //draw the box
+        Handles.color = Color.green;
+        Handles.DrawWireCube(speaker.transform.position + speaker.transform.TransformVector(speaker.boxCollider.center), speaker.transform.TransformVector(speaker.boxCollider.size));
     }
 
-    private void OnUndoRedo()
+    void DrawSphereEditor()
     {
-        Debug.Log("Undo/Redo");
-        speakRange = speaker.speakRange;
-        speakerCollisionType = speaker.dialogHitboxType;
-        boxSize = speaker.transform.InverseTransformDirection(speaker.boxSize);
-        boxPosition = speaker.boxPosition;
-        speakerCollisionType = speaker.dialogHitboxType;
+        //draw the editor for the spherecollider
+        EditorGUI.BeginChangeCheck();
+        if (Tools.current == Tool.Move)
+        {
+            Vector3 newSpherePosition = Handles.PositionHandle(speaker.transform.position + speaker.transform.TransformVector(speaker.speakCollider.center), Quaternion.identity);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(target, "Changed Speak Sphere Collider Position");
+                EditorUtility.SetDirty(speaker);
+                speaker.speakCollider.center = speaker.transform.InverseTransformVector(newSpherePosition - speaker.transform.position);
+            }
+        }
+        else if (Tools.current == Tool.Scale)
+        {
+            Handles.color = Color.green;
+            float newSphereRadius = Handles.ScaleSlider(speaker.speakCollider.radius, speaker.transform.position, Camera.current.transform.up, Quaternion.identity, HandleUtility.GetHandleSize(speaker.transform.position), 1);
+            if (EditorGUI.EndChangeCheck())
+            {
+                Undo.RecordObject(target, "Changed Speak Sphere Collider Radius");
+                EditorUtility.SetDirty(speaker);
+                speaker.speakCollider.radius = newSphereRadius;
+                speaker.speakRange = newSphereRadius;
+            }
+        }
 
-        // speaker.boxSize = boxSize;
-        // speaker.boxPosition = boxPosition;
-        // speaker.speakRange = speakRange;
-        // speaker.dialogHitboxType = speakerCollisionType;
-        // speaker.speakRange = speakRange;
     }
-
 }

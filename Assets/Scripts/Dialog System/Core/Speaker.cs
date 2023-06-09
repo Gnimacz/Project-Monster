@@ -48,7 +48,7 @@ public class Speaker : MonoBehaviour
         // speakCollider.radius = speakRange;
         // speakCollider.transform.position = transform.position;
         // speakCollider.isTrigger = true;
-        SetColliders();
+        // SetColliders();
     }
     void OnEnable()
     {
