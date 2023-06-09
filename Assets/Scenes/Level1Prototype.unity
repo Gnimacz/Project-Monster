@@ -17283,7 +17283,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1625246553 stripped
 Transform:
@@ -22303,7 +22303,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2066314636}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2066314639}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c83680854e1d9cc49b7977365fb650da, type: 3}
