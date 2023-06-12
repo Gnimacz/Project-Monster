@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Events;
 
-// [CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog System/Dialog")]
 [System.Serializable]
 public class Dialog
 {
     public string identifier;
     public AudioClip[] voiceClips;
     public Sentence[] sentences;
-
     public UnityEvent OnDialogComplete;
 }
 
