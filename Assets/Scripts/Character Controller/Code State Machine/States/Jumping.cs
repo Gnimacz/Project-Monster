@@ -49,7 +49,6 @@ public class Jumping : State
     
     public override void EnterState(PlayerStateManager player)
     {
-        this.player.animator.SetTrigger("Jump");
     
         player.rb.velocity = new Vector3(player.rb.velocity.x, 0, 0);
         player.rb.AddForce(new Vector3(0, player.jumpForce, 0), ForceMode.Impulse);
@@ -61,6 +60,7 @@ public class Jumping : State
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
 
+        player.animator.SetTrigger("Jump");
     }
 
     public override void ExitState(PlayerStateManager player)

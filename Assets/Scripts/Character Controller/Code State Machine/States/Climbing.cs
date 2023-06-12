@@ -69,6 +69,11 @@ public class Climbing : State
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
+        
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
+            player.animator.SetTrigger("ClimbHorizontal");
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.UpDown)
+            player.animator.SetTrigger("ClimbVertical");
     }
 
     public override void ExitState(PlayerStateManager player)
