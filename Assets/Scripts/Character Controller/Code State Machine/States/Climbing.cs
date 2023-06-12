@@ -65,7 +65,10 @@ public class Climbing : State
         player.rb.useGravity = false;
 
         Vector3 surfaceForwardVector = ControlValues.Instance.currentClimbEnd - ControlValues.Instance.currentClimbStart;
-        ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(surfaceForwardVector.normalized, ControlValues.Instance.currentSurfaceNormal);
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
+            ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(surfaceForwardVector.normalized, ControlValues.Instance.currentSurfaceNormal);
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.UpDown)
+            ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(-ControlValues.Instance.currentSurfaceNormal, surfaceForwardVector.normalized);
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
