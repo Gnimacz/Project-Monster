@@ -15085,7 +15085,7 @@ PrefabInstance:
         type: 3}
       propertyPath: boxCollider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1857784204}
     - target: {fileID: 3590782567326969405, guid: ef71e001f02f78e409a52fde75e7324b,
         type: 3}
       propertyPath: boxPosition.x

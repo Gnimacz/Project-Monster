@@ -17,9 +17,9 @@ public class SpeakerEditor : Editor
         speaker = (Speaker)target;
         Tools.hidden = true;
         speakerCollisionType = speaker.dialogHitboxType;
-        boxPosition = speaker.boxPosition;
-        boxSize = speaker.boxSize;
-        speakRange = speaker.speakRange;
+        // boxPosition = speaker.boxPosition;
+        // boxSize = speaker.boxSize;
+        // speakRange = speaker.speakRange;
         // Undo.undoRedoPerformed += OnUndoRedo;
         if (speaker.boxCollider == null)
         {
@@ -33,10 +33,14 @@ public class SpeakerEditor : Editor
         if (speakerCollisionType == Speaker.DialogHitboxType.Box)
         {
             speaker.speakCollider.enabled = false;
+            speaker.speakCollider.hideFlags = HideFlags.HideInInspector;
+            speaker.boxCollider.hideFlags = HideFlags.None;
         }
         else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
         {
             speaker.speakCollider.enabled = true;
+            speaker.speakCollider.hideFlags = HideFlags.None;
+            speaker.boxCollider.hideFlags = HideFlags.HideInInspector;
         }
     }
 
@@ -64,6 +68,8 @@ public class SpeakerEditor : Editor
                 if (speaker.speakCollider != null) speaker.speakCollider.enabled = false;
                 if (!speaker.boxCollider.enabled) speaker.boxCollider.enabled = true;
                 if (!speaker.boxCollider.isTrigger) speaker.boxCollider.isTrigger = true;
+                speaker.boxCollider.hideFlags = HideFlags.None;
+                speaker.speakCollider.hideFlags = HideFlags.HideInInspector;
             }
             else if (speakerCollisionType == Speaker.DialogHitboxType.Sphere)
             {
@@ -76,6 +82,8 @@ public class SpeakerEditor : Editor
                 }
                 if (speaker.boxCollider != null) speaker.boxCollider.enabled = false;
                 speaker.speakCollider.enabled = true;
+                speaker.speakCollider.hideFlags = HideFlags.None;
+                speaker.boxCollider.hideFlags = HideFlags.HideInInspector;
             }
             EditorUtility.SetDirty(speaker);
         }
@@ -169,15 +177,14 @@ public class SpeakerEditor : Editor
         else if (Tools.current == Tool.Scale)
         {
             Handles.color = Color.green;
-            float newSphereRadius = Handles.ScaleSlider(speaker.speakCollider.radius, speaker.transform.position, Camera.current.transform.up, Quaternion.identity, HandleUtility.GetHandleSize(speaker.transform.position), 1);
+            float newSphereRadius = Handles.ScaleSlider(speaker.transform.TransformVector(new Vector3(speaker.speakCollider.radius, 0, 0)).x, speaker.transform.position, Camera.current.transform.up, Quaternion.identity, HandleUtility.GetHandleSize(speaker.transform.position), 1);
             if (EditorGUI.EndChangeCheck())
             {
                 Undo.RecordObject(target, "Changed Speak Sphere Collider Radius");
                 EditorUtility.SetDirty(speaker);
-                speaker.speakCollider.radius = newSphereRadius;
-                speaker.speakRange = newSphereRadius;
+                speaker.speakCollider.radius = speaker.transform.InverseTransformVector(new Vector3(newSphereRadius, 0, 0)).x;
+                // speaker.speakRange = newSphereRadius;
             }
         }
-
     }
 }
