@@ -17,6 +17,8 @@ public class LevelSwitchSelector : Editor
     public override void OnInspectorGUI()
     {
         // DrawDefaultInspector();
+        DrawPropertiesExcluding(serializedObject, "m_Script");
+        serializedObject.ApplyModifiedProperties();
         GUILayout.Space(10);
         GUILayout.Label("Select Level to Load");
         selectedScene = levelSwitchScript.levelToLoad;
