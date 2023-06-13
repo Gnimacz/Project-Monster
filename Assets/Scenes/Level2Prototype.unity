@@ -3788,6 +3788,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1185112831043268476, guid: 54768ec1f84135346b30f3f025f5ae59,
         type: 3}
+      propertyPath: levelToLoad
+      value: Level3Prototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185112831043268476, guid: 54768ec1f84135346b30f3f025f5ae59,
+        type: 3}
       propertyPath: onLevelSwitch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
       objectReference: {fileID: 0}

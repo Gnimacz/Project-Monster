@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class SimpleLevelSwitch : MonoBehaviour
 {
 
-    [HideInInspector] public string levelToLoad;
+    /*[HideInInspector]*/ public string levelToLoad;
     public UnityEvent onLevelSwitch;
     void OnTriggerEnter(Collider other)
     {
