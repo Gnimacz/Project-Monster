@@ -232,6 +232,7 @@ MonoBehaviour:
   slideSpeed: 15
   climbExitJumpForce: 8
   slideExitLaunchForce: 3
+  climbEnterExitCooldown: 0.2
 --- !u!114 &9091859297822107739
 MonoBehaviour:
   m_ObjectHideFlags: 0
