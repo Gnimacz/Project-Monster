@@ -138,6 +138,15 @@ MonoBehaviour:
     m_Localized: Well, thanks for doing that. Now I can finally leave this place.
     m_Metadata:
       m_Items: []
+  - m_Id: 10140929447374848
+    m_Localized: There's the room! Just a little further and I'm home!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10141593447641088
+    m_Localized: It's starting to get dark again... I'll be back right on time for
+      bed!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

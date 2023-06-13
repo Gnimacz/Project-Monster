@@ -141,6 +141,15 @@ MonoBehaviour:
     m_Localized: Nou, bedankt voor je hulp. Nu kan ik hier eindelijk weg.
     m_Metadata:
       m_Items: []
+  - m_Id: 10140929447374848
+    m_Localized: Daar is het huis! Ik ben bijna thuis!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10141593447641088
+    m_Localized: Het begint weer donker te worden... Precies op tijd terug om naar
+      bed te gaan!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

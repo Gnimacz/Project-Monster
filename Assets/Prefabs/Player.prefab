@@ -222,11 +222,11 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  airAcceleration: 50
+  airAcceleration: 25
   airMaxSpeed: 8
   jumpForce: 15
   coyoteGraceTime: 0.15
-  maxJumpDuration: 0.3
+  maxJumpDuration: 0.2
   jumpFloatForce: 15
   climbSpeed: 7
   slideSpeed: 15
@@ -544,6 +544,7 @@ MonoBehaviour:
   currentSurfaceNormal: {x: 0, y: 0, z: 0}
   checkpointBacklog: []
   lastGroundedTime: 0
+  lastClimbingTime: 0
   targetMeshRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1067457391987527242
 PrefabInstance:
