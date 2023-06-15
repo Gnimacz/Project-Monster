@@ -26,6 +26,7 @@ public class ControlValues : MonoBehaviour
     public float lastGroundedTime;
     public float lastClimbingTime;
     public Quaternion targetMeshRotation;
+    public float deathCooldown = 0.2f;
 
     private void Awake()
     {
