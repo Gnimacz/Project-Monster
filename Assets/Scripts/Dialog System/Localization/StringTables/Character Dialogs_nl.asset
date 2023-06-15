@@ -19,73 +19,36 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 53992468480
-    m_Localized: Hallo, kleine blauwe vriend. Je lijkt verdwaald. Mijn naam is Spike,
-      blij je te ontmoeten!
+    m_Localized: Hallo vriend! Ik ben Spike!
     m_Metadata:
       m_Items: []
   - m_Id: 391057165758464
-    m_Localized: AAAA! Eet me alsjeblieft niet op!
+    m_Localized: Aaah! Hallo? Mag ik alsjeblieft langskomen?
     m_Metadata:
       m_Items: []
   - m_Id: 3624986466578432
-    m_Localized: Wees niet bang! Ik zal je geen pijn doen. Waarom heb je zo veel
-      haast? De storm buiten is erg gevaarlijk.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3625164212793344
-    m_Localized: Ik probeer gewoon terug naar huis te komen. Vind je het erg om aan
-      de kant te gaan zodat ik erdoor kan?
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3639721987665920
-    m_Localized: Kun je een kers voor me halen? Ik zou het zelf willen doen, maar
-      ik ben te groot... Als je dat hebt gedaan, laat ik je door!
+    m_Localized: Tuurlijk, maar kun je eerst een kers voor me halen? Ik ben te zwaar
+      voor die klimplanten...
     m_Metadata:
       m_Items: []
   - m_Id: 3645238076239872
-    m_Localized: Hey daar ben je weer Blue! Dat duurde niet lang. Heb je de kers
-      gekregen?
+    m_Localized: Kersssss!!! Dank je wel lieve kerel!
     m_Metadata:
       m_Items: []
   - m_Id: 3645342854148096
-    m_Localized: Ja! Alsjeblieft!
+    m_Localized: Geen probleem, ik help je graag!
     m_Metadata:
       m_Items: []
   - m_Id: 3645398088937472
-    m_Localized: Eindelijk! Heel erg bedankt, Blue, ik sta bij je in het krijt. Ik
-      hoop dat het niet te veel moeite was. Ik ga nu aan de kant, maar wees voorzichtig
-      daarbuiten!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3645514455707648
-    m_Localized: Geen enkel probleem, ik help je graag!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3645604725518336
-    m_Localized: Veel succes daarbuiten! Ik hoop dat je veilig terugkomt.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3652339066466304
-    m_Localized: Hoi. Gaat het?
+    m_Localized: Veel succes met je reis!
     m_Metadata:
       m_Items: []
   - m_Id: 3652366186835968
-    m_Localized: Ik raakte mijn zusje, Dazzle, kwijt door de storm en ik kan haar
-      niet vinden!
+    m_Localized: '*snif-snif* Heb je mijn zusjje gezien? Kan je alsjeblieft helpen?'
     m_Metadata:
       m_Items: []
   - m_Id: 3652393462394880
-    m_Localized: Het spijt me dat te horen... Ik ben op weg naar het huis, dus ik
-      zal kijken of ik haar nog zie.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3652823500189696
-    m_Localized: Oh, ik zou je zo dankbaar zijn als je dat deed! Ik zal dit gebied
-      doorzoeken, dus roep maar als je haar vindt.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3652925887344640
-    m_Localized: Zal ik doen!
+    m_Localized: Als ik haar zie zal ik het laten weten!
     m_Metadata:
       m_Items: []
   - m_Id: 7985397202628608
@@ -98,47 +61,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7988182165958656
-    m_Localized: Hey! Ik zag je praten met mijn vriend, Razzle. Ben je hier om te
-      helpen?
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988253859196928
-    m_Localized: Ja. Ik ben onderweg naar huis, maar ik zal kijken of ik zijn zusje
-      kan vinden.
+    m_Localized: Arme Razzle... We moeten zijn zusje echt vinden...
     m_Metadata:
       m_Items: []
   - m_Id: 7988383798734848
-    m_Localized: We nemen alle hulp aan die we kunnen krijgen. Voorzichtig met deze
-      modder trouwens. Het is erg glad.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988488341762048
-    m_Localized: Heel erg bedankt dat je me hebt geholpen mijn zusje te vinden!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988578129227776
-    m_Localized: Ik was zo bang zonder mijn broer... Bedankt, vriend!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988657611288576
-    m_Localized: Je mag me Blue noemen. Ik ben gewoon blij dat alles goed is gekomen!
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988728398557184
-    m_Localized: Ik zal ervoor zorgen dat deze twee vanaf nu bij elkaar blijven.
-      Blijf veilig, Blue!
+    m_Localized: Als je die kant op gaat, pas dan op voor de modder.
     m_Metadata:
       m_Items: []
   - m_Id: 7999725423243264
-    m_Localized: Hij is eindelijk weg! Heb jij dat gedaan?
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7999825562251264
-    m_Localized: Ja. Het enige wat hij wilde was een kers.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7999929992032256
-    m_Localized: Nou, bedankt voor je hulp. Nu kan ik hier eindelijk weg.
+    m_Localized: Oh! De ingang is open, bedankt!
     m_Metadata:
       m_Items: []
   - m_Id: 10140929447374848

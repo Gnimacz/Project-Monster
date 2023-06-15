@@ -24,15 +24,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3624986466578432
-    m_Key: Lvl1.Spike.Inquiry
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3625164212793344
-    m_Key: Lvl1.Blue.Explain
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3639721987665920
-    m_Key: Lvl1.Spike.Quest
+    m_Key: 'Lvl1.Spike.Quest
+
+'
     m_Metadata:
       m_Items: []
   - m_Id: 3645238076239872
@@ -44,19 +38,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3645398088937472
-    m_Key: Lvl1.Spike.Thanks
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3645514455707648
-    m_Key: Lvl1.Blue.Welcome
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3645604725518336
-    m_Key: Lvl1.Spike.GoodLuck
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3652339066466304
-    m_Key: Lvl2.Blue.Intro
+    m_Key: Lvl1.Spike.Goodbye
     m_Metadata:
       m_Items: []
   - m_Id: 3652366186835968
@@ -65,14 +47,6 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3652393462394880
     m_Key: Lvl2.Blue.Quest
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3652823500189696
-    m_Key: Lvl2.Razzle.Grateful
-    m_Metadata:
-      m_Items: []
-  - m_Id: 3652925887344640
-    m_Key: Lvl2.Blue.Agreed
     m_Metadata:
       m_Items: []
   - m_Id: 7985397202628608
@@ -87,40 +61,12 @@ MonoBehaviour:
     m_Key: Lvl2.Flower.Intro
     m_Metadata:
       m_Items: []
-  - m_Id: 7988253859196928
-    m_Key: Lvl2.Blue.Flower
-    m_Metadata:
-      m_Items: []
   - m_Id: 7988383798734848
     m_Key: Lvl2.Flower.Mud
     m_Metadata:
       m_Items: []
-  - m_Id: 7988488341762048
-    m_Key: Lvl2.Razzle.Reunion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988578129227776
-    m_Key: Lvl2.Dazzle.Reunion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988657611288576
-    m_Key: Lvl2.Blue.Reunion
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7988728398557184
-    m_Key: Lvl2.Flower.Reunion
-    m_Metadata:
-      m_Items: []
   - m_Id: 7999725423243264
     m_Key: Lvl1.Bean.PostCherry
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7999825562251264
-    m_Key: Lvl1.Blue.PostCherry
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7999929992032256
-    m_Key: Lvl1.Bean.Grateful
     m_Metadata:
       m_Items: []
   - m_Id: 10140929447374848
