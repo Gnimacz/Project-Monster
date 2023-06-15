@@ -38,8 +38,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3639721987665920
-    m_Localized: Well, I've been trying to get a cherry from up there but I'm too
-      big... Say, if you can get that cherry for me, I'll let you pass through!
+    m_Localized: Can you get me a cherry? I would do it but I'm too big... If you
+      do, I'll let you pass through!
     m_Metadata:
       m_Items: []
   - m_Id: 3645238076239872
@@ -136,6 +136,15 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7999929992032256
     m_Localized: Well, thanks for doing that. Now I can finally leave this place.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10140929447374848
+    m_Localized: There's the room! Just a little further and I'm home!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10141593447641088
+    m_Localized: It's starting to get dark again... I'll be back right on time for
+      bed!
     m_Metadata:
       m_Items: []
   references:

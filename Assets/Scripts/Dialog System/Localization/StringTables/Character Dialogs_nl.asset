@@ -38,8 +38,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3639721987665920
-    m_Localized: Nou, ik heb geprobeerd een kers die daar boven ligt te pakken, maar
-      ik ben te groot... Zeg, als je die kers voor me kunt pakken, laat ik je erdoor!
+    m_Localized: Kun je een kers voor me halen? Ik zou het zelf willen doen, maar
+      ik ben te groot... Als je dat hebt gedaan, laat ik je door!
     m_Metadata:
       m_Items: []
   - m_Id: 3645238076239872
@@ -139,6 +139,15 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7999929992032256
     m_Localized: Nou, bedankt voor je hulp. Nu kan ik hier eindelijk weg.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10140929447374848
+    m_Localized: Daar is het huis! Ik ben bijna thuis!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10141593447641088
+    m_Localized: Het begint weer donker te worden... Precies op tijd terug om naar
+      bed te gaan!
     m_Metadata:
       m_Items: []
   references:
