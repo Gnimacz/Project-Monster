@@ -18,6 +18,7 @@ public class PlayerStateManager : MonoBehaviour
     public Climbing climbingState = new Climbing();
     public Sliding slideState = new Sliding();
     public Dialogue dialogueState = new Dialogue();
+    public Death deathState = new Death();
     #endregion
 
     #region Current and previous states
@@ -124,7 +125,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         rb.position = ControlValues.Instance.lastCheckpoint;
-        ChangeState(idleState);
+        ChangeState(deathState);
     }
 
     private void OnGUI()
