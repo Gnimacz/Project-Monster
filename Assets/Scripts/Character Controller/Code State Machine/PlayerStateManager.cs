@@ -74,10 +74,12 @@ public class PlayerStateManager : MonoBehaviour
         previousState = currentState;
 
         InputEvents.Move += OnMove;
+        animator = GetComponentInChildren<Animator>();
     }
     private void OnDisable()
     {
         InputEvents.Move -= OnMove;
+        currentState.ExitState(this);
     }
     // Update is called once per frame
     void Update()
