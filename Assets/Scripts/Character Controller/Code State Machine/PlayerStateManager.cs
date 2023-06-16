@@ -86,6 +86,8 @@ public class PlayerStateManager : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         UpdateMeshRotation();
+        animator.SetFloat("MovementInput.x", rb.velocity.normalized.x);
+        animator.SetFloat("MovementInput.y", rb.velocity.normalized.y);
     }
 
     private void FixedUpdate()

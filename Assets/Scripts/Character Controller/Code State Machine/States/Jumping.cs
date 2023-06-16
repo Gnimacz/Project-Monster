@@ -60,11 +60,12 @@ public class Jumping : State
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
 
-        player.animator.SetTrigger("Jump");
+        player.animator.SetBool("Jump", true);
     }
 
     public override void ExitState(PlayerStateManager player)
     {
+        player.animator.SetBool("Jump", false);
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;

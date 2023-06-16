@@ -37,6 +37,7 @@ public class InAir : State
     
     public override void EnterState(PlayerStateManager player)
     {
+        player.animator.SetBool("Jump", true);
         this.player = player;
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
@@ -45,6 +46,7 @@ public class InAir : State
 
     public override void ExitState(PlayerStateManager player)
     {
+        player.animator.SetBool("Jump", false);
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
