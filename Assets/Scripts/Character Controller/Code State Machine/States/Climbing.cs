@@ -12,14 +12,14 @@ public class Climbing : State
     public override void UpdateState(PlayerStateManager player)
     {
         player.rb.velocity = Vector3.zero;
-        
+
         // if (Input.GetKeyDown(KeyCode.Space))
         // {
         //     player.ChangeState(player.jumpingState);
         //     return;
         // }
 
-        float input = ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight 
+        float input = ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight
             ? player.moveInput.x : player.moveInput.y;
 
         Vector3 climbDirection = ControlValues.Instance.currentClimbEnd - ControlValues.Instance.currentClimbStart;
@@ -35,20 +35,27 @@ public class Climbing : State
             Vector3.Distance(player.rb.position, closer) < 0.5f &&
             input < 0)
             return;
-        
+
         if (closer == ControlValues.Instance.currentClimbEnd &&
             Vector3.Distance(player.rb.position, closer) < 0.5f &&
             input > 0)
             return;
 
         player.rb.velocity = climbDirection * input * player.climbSpeed;
+
+        if (player.rb.velocity.x > 0 && ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
+            //rotate the player to face the right
+            ControlValues.Instance.targetMeshRotation = Quaternion.Euler(0, -90, 0);
+        else if (player.rb.velocity.x < 0 && ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
+            //rotate the player to face the left
+            ControlValues.Instance.targetMeshRotation = Quaternion.Euler(0, 90, 0);
     }
 
     public override void FixedUpdateState(PlayerStateManager player)
     {
-        
+
     }
-    
+
     public override void EnterState(PlayerStateManager player)
     {
         this.player = player;
@@ -65,18 +72,35 @@ public class Climbing : State
         player.rb.useGravity = false;
 
         Vector3 surfaceForwardVector = ControlValues.Instance.currentClimbEnd - ControlValues.Instance.currentClimbStart;
-        ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(surfaceForwardVector.normalized, ControlValues.Instance.currentSurfaceNormal);
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
+            ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(surfaceForwardVector.normalized, ControlValues.Instance.currentSurfaceNormal);
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.UpDown)
+            ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(-ControlValues.Instance.currentSurfaceNormal, surfaceForwardVector.normalized);
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
+
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
+        {
+            player.animator.SetBool("ClimbHorizontal", true);
+        }
+        if (ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.UpDown)
+        {
+            player.animator.SetBool("ClimbVertical", true);
+        }
     }
 
     public override void ExitState(PlayerStateManager player)
     {
         player.rb.useGravity = true;
-        
+
+        player.animator.SetBool("ClimbHorizontal", false);
+
+        player.animator.SetBool("ClimbVertical", false);
+
+
         player.rb.AddForce(new Vector3(Mathf.Ceil(player.moveInput.x), 0, 0) * player.climbExitJumpForce, ForceMode.Impulse);
-        
+
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;

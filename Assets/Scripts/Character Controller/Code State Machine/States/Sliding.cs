@@ -32,8 +32,8 @@ public class Sliding : State
     
     public override void EnterState(PlayerStateManager player)
     {
+        player.animator.SetBool("Sliding", true);
         player.rb.velocity = Vector3.zero;
-
         Vector3 closetsPoint = Utils.ClosestPointOnLineSegment(
             ControlValues.Instance.currentSlideStart,
             ControlValues.Instance.currentSlideEnd,
@@ -53,6 +53,7 @@ public class Sliding : State
 
     public override void ExitState(PlayerStateManager player)
     {
+        player.animator.SetBool("Sliding", false);
         player.rb.useGravity = true;
 
         Vector3 horizontalDirection = new Vector3(Mathf.Round(ControlValues.Instance.currentSlideDirection.x), 0, 0);

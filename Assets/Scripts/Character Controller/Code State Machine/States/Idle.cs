@@ -9,7 +9,6 @@ public class Idle : State
     PlayerStateManager player;
     public override void UpdateState(PlayerStateManager player)
     {
-
         if (player.moveInput.x != 0)
         {
             player.ChangeState(player.runningState);
@@ -28,6 +27,8 @@ public class Idle : State
 
     public override void EnterState(PlayerStateManager player)
     {
+        player.animator.SetBool("Idle", true);
+        
         this.player = player;
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
@@ -36,6 +37,7 @@ public class Idle : State
 
     public override void ExitState(PlayerStateManager player)
     {
+        player.animator.SetBool("Idle", false);
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;

@@ -31,6 +31,7 @@ public class PlayerStateManager : MonoBehaviour
     public Rigidbody rb;
     public Transform feet;
     public Transform mesh;
+    public Animator animator;
 
     [Space(10)]
     [Header("General movement")]
@@ -86,6 +87,8 @@ public class PlayerStateManager : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         UpdateMeshRotation();
+        animator.SetFloat("MovementInput.x", rb.velocity.normalized.x);
+        animator.SetFloat("MovementInput.y", rb.velocity.normalized.y);
     }
 
     private void FixedUpdate()

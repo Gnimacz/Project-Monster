@@ -50,6 +50,8 @@ public class Running : State
 
     public override void EnterState(PlayerStateManager player)
     {
+        player.animator.SetBool("Run", true);
+        
         this.player = player;
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
@@ -58,6 +60,7 @@ public class Running : State
 
     public override void ExitState(PlayerStateManager player)
     {
+        player.animator.SetBool("Run", false);
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
