@@ -546,6 +546,7 @@ MonoBehaviour:
   lastGroundedTime: 0
   lastClimbingTime: 0
   targetMeshRotation: {x: 0, y: 0, z: 0, w: 0}
+  deathCooldown: 0.5
 --- !u!1001 &1067457391987527242
 PrefabInstance:
   m_ObjectHideFlags: 0
