@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MenuTextTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MenuTextTable
+  m_TableCollectionNameGuidString: fd40765179d9171489aa71f01183efc6
+  m_Entries:
+  - m_Id: 13560180736
+    m_Key: button.play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86012588032
+    m_Key: button.credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1083288055808
+    m_Key: button.quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2977049866240
+    m_Key: button.english
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3260643536896
+    m_Key: button.dutch
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6634839535903571969
+  references:
+    version: 2
+    RefIds:
+    - rid: 6634839535903571969
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1687190167304

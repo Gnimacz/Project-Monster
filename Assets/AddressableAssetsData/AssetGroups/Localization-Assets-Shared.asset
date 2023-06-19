@@ -21,6 +21,11 @@ MonoBehaviour:
     m_Address: Assets/Localization/StringTables/Character Dialogs Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: fd40765179d9171489aa71f01183efc6
+    m_Address: Assets/Scripts/Dialog System/Localization/StringTables/Menu/MenuTextTable
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9fbd6f34e0c02ee4988746dab6aab561, type: 2}
   m_SchemaSet:
