@@ -60,6 +60,17 @@ public class PlayerStateManager : MonoBehaviour
     public Vector2 moveInput { get; private set; }
     #endregion 
 
+    #region Sounds
+    [Space(10)]
+    [Header("Sounds")]
+    public AudioSource audioSource;
+    public AudioClip landSound;
+    public AudioClip slideSound;
+    public AudioClip climbSound;
+    public AudioClip bounceSound;
+    public AudioClip deathSound;
+    #endregion
+
     private void Start()
     {
         //add current position as checkpoint at the start for testing
@@ -115,6 +126,7 @@ public class PlayerStateManager : MonoBehaviour
 
     public void UpdateMeshRotation()
     {
+        if(ControlValues.Instance.targetMeshRotation == null) return;
         mesh.localRotation = Quaternion.Lerp(
             mesh.localRotation, 
             ControlValues.Instance.targetMeshRotation, 
@@ -216,6 +228,7 @@ public class PlayerStateManager : MonoBehaviour
             //the bouncy object but still gets launched the same amout no matter what
             //I think it works the way I intended but you never know with math
             rb.velocity += bouncyObject.launchDirection * bouncyObject.launchForce;
+            audioSource.PlayOneShot(bounceSound);
         }
     }
 

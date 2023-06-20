@@ -50,6 +50,7 @@ public class InAir : State
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
+        player.audioSource.PlayOneShot(player.landSound);
     }
 
     void InAirMovement(PlayerStateManager player)
