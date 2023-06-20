@@ -32,6 +32,7 @@ public class Death : State
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
         player.rb.velocity = new Vector3(0, player.rb.velocity.y, 0);
+        player.audioSource.PlayOneShot(player.deathSound);
     }
 
     public override void ExitState(PlayerStateManager player)

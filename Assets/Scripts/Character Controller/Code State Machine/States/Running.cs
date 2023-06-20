@@ -56,6 +56,10 @@ public class Running : State
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
+        //loop the running sound
+        player.audioSource.clip = player.runSound;
+        player.audioSource.loop = true;
+        player.audioSource.Play();
     }
 
     public override void ExitState(PlayerStateManager player)
@@ -64,6 +68,7 @@ public class Running : State
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
+        player.audioSource.Stop();
     }
 
     private void OnMove(object sender, InputAction.CallbackContext context) { }

@@ -64,6 +64,8 @@ public class PlayerStateManager : MonoBehaviour
     [Space(10)]
     [Header("Sounds")]
     public AudioSource audioSource;
+    public AudioClip runSound;
+    public AudioClip jumpSound;
     public AudioClip landSound;
     public AudioClip slideSound;
     public AudioClip climbSound;

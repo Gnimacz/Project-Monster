@@ -49,6 +49,11 @@ public class Climbing : State
         else if (player.rb.velocity.x < 0 && ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
             //rotate the player to face the left
             ControlValues.Instance.targetMeshRotation = Quaternion.Euler(0, 90, 0);
+        
+        if(player.rb.velocity.magnitude > 0.1f)
+            player.audioSource.UnPause();
+        else
+            player.audioSource.Pause();
     }
 
     public override void FixedUpdateState(PlayerStateManager player)
@@ -88,6 +93,11 @@ public class Climbing : State
         {
             player.animator.SetBool("ClimbVertical", true);
         }
+
+        //loop the climbing sound
+        player.audioSource.clip = player.climbSound;
+        player.audioSource.loop = true;
+        player.audioSource.Play();
     }
 
     public override void ExitState(PlayerStateManager player)

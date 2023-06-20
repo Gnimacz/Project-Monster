@@ -50,7 +50,7 @@ public class InAir : State
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
-        player.audioSource.PlayOneShot(player.landSound);
+        if(player.rb.velocity.y < -16.5f) player.audioSource.PlayOneShot(player.landSound);
     }
 
     void InAirMovement(PlayerStateManager player)
