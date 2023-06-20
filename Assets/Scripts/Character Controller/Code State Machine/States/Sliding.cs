@@ -49,6 +49,11 @@ public class Sliding : State
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
+
+        //loop the sliding sound
+        player.audioSource.clip = player.slideSound;
+        player.audioSource.loop = true;
+        player.audioSource.Play();
     }
 
     public override void ExitState(PlayerStateManager player)
@@ -62,6 +67,8 @@ public class Sliding : State
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
+
+        player.audioSource.Stop();
     }
     
     private void OnMove(object sender, InputAction.CallbackContext context) { }
