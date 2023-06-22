@@ -3590,7 +3590,7 @@ MonoBehaviour:
   slideExitLaunchForce: 3
   climbEnterExitCooldown: 0.2
   audioSource: {fileID: 8002667472608639110}
-  runSound: {fileID: 8300000, guid: bb4693f0d153f4d4380607808b3a9a0b, type: 3}
+  runSound: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: bb4693f0d153f4d4380607808b3a9a0b, type: 3}
   landSound: {fileID: 8300000, guid: b531b201546e3b848a3145f80e61654d, type: 3}
   slideSound: {fileID: 8300000, guid: 690c36d4b263df64e8b15ce65993579d, type: 3}
