@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,6 +258,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40835126}
   m_CullTransparentMesh: 1
+--- !u!114 &47572249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1046557763905160195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &99510505
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,18 +324,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 363667812}
+    m_SelectOnDown: {fileID: 47572249}
+    m_SelectOnLeft: {fileID: 1308773191}
+    m_SelectOnRight: {fileID: 47572249}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -405,6 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f4c700a8e73e74bbfba44a1e70449c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWait: 0.5
   levelToLoad: 
 --- !u!1 &111555159
 GameObject:
@@ -630,6 +643,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1073072090}
     m_Modifications:
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 47572249}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1308773191}
     - target: {fileID: 5382440403624540612, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
         type: 3}
       propertyPath: m_Name
@@ -883,18 +926,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1488132707}
+    m_SelectOnDown: {fileID: 930308546}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5377358, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -999,6 +1042,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1073072090}
     m_Modifications:
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 357555949}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 357555949}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 979969018}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 99510507}
     - target: {fileID: 5382440403624540612, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
         type: 3}
       propertyPath: m_Name
@@ -1122,6 +1205,30 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 335099791}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &357555949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1196350712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &363667812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830976879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &369772800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,18 +1284,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 1
+    m_SelectOnUp: {fileID: 930308546}
+    m_SelectOnDown: {fileID: 1488132707}
+    m_SelectOnLeft: {fileID: 930308546}
+    m_SelectOnRight: {fileID: 654673518}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5377358, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1270,6 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f4c700a8e73e74bbfba44a1e70449c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWait: 0.5
   levelToLoad: 
 --- !u!114 &369772806
 MonoBehaviour:
@@ -1366,18 +1474,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 284947380}
+    m_SelectOnDown: {fileID: 369772802}
+    m_SelectOnLeft: {fileID: 930308546}
+    m_SelectOnRight: {fileID: 930308546}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5377358, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1459,6 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f4c700a8e73e74bbfba44a1e70449c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWait: 0.5
   levelToLoad: 
 --- !u!114 &654673522
 MonoBehaviour:
@@ -1793,18 +1902,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 284947380}
+    m_SelectOnDown: {fileID: 369772802}
+    m_SelectOnLeft: {fileID: 654673518}
+    m_SelectOnRight: {fileID: 654673518}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5377358, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1886,6 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f4c700a8e73e74bbfba44a1e70449c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWait: 0.5
   levelToLoad: 
 --- !u!114 &930308550
 MonoBehaviour:
@@ -1927,6 +2037,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &979969018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+    type: 3}
+  m_PrefabInstance: {fileID: 242050032}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1009450252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +2781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1103240270}
+  - component: {fileID: 1103240271}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -2687,6 +2810,20 @@ RectTransform:
   m_AnchoredPosition: {x: 800, y: 0}
   m_SizeDelta: {x: 1600, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1103240271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103240269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094b3b535d71ca14bb41ba797ed716cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedButton: {fileID: 99510505}
+  previousSelectedButton: {fileID: 0}
 --- !u!1001 &1196350712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2694,6 +2831,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1073072090}
     m_Modifications:
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 1308773191}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 1308773191}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 363667812}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 363667812}
     - target: {fileID: 5382440403624540612, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
         type: 3}
       propertyPath: m_Name
@@ -2817,6 +2994,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1196350712}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1308773191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+    type: 3}
+  m_PrefabInstance: {fileID: 335099791}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1440101749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +3126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2946,9 +3135,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5377358, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3070,6 +3259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f4c700a8e73e74bbfba44a1e70449c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWait: 0.5
   levelToLoad: 
 --- !u!1 &1495488501
 GameObject:
@@ -3348,6 +3538,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1073072090}
     m_Modifications:
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 47572249}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 47572249}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 99510507}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 357555949}
     - target: {fileID: 5382440403624540612, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
         type: 3}
       propertyPath: m_Name
@@ -3610,27 +3840,27 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_PointAction: {fileID: -4001735375625492448, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_MoveAction: {fileID: -2887950150456660647, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_SubmitAction: {fileID: 198918093519199486, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_CancelAction: {fileID: 5639969370066353844, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_LeftClickAction: {fileID: 1067776017053812834, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_MiddleClickAction: {fileID: -5099198996862936495, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_RightClickAction: {fileID: 2801807070270603526, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ScrollWheelAction: {fileID: 2407612380511776918, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_TrackedDevicePositionAction: {fileID: -6186100704788175658, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_TrackedDeviceOrientationAction: {fileID: -6692188949455996983, guid: 9075bec98b23387458356f7f6ee8c157,
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
@@ -3647,7 +3877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 369772800}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &2146637842
@@ -3672,6 +3902,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1073072090}
     m_Modifications:
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 363667812}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 363667812}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 99510507}
+    - target: {fileID: 494568297262739933, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 979969018}
     - target: {fileID: 5382440403624540612, guid: a7f5f6798c8050a4aae0b1dcc56cea52,
         type: 3}
       propertyPath: m_Name

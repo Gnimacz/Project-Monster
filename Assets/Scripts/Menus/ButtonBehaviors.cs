@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.EventSystems;
 
 public class ButtonBehaviors : MonoBehaviour
 {
+    public float timeToWait = 0.5f;
     public string levelToLoad;
+    private GameObject currentlySelected;
     public void LoadLevelByName(string levelToLoad)
     {
         LevelLoadData.levelName = levelToLoad;
@@ -18,21 +21,32 @@ public class ButtonBehaviors : MonoBehaviour
     {
         //twean the pop up from top to bottom
         popUp.SetActive(true);
-        LeanTween.moveX(popUp, 0.5f * Screen.width, 0.8f).setEaseOutBack();
+        LeanTween.moveX(popUp, 0.5f * Screen.width, timeToWait).setEaseOutBack().setOnComplete(() =>
+        {
+            MenuPopup popUpComponent = popUp.GetComponent<MenuPopup>();
+            if(popUpComponent == null)
+            {
+                return;
+            }
+            popUp.GetComponent<MenuPopup>().previousSelectedButton = EventSystem.current.currentSelectedGameObject;
+            EventSystem.current.SetSelectedGameObject(popUp.GetComponent<MenuPopup>()?.selectedButton);
+        });
     }
     public void ClosePopUp(GameObject popUp)
     {
-        //twean the pop up from top to bottom
-        popUp.SetActive(true);
-        LeanTween.moveX(popUp, 1.5f * Screen.width, 0.8f).setEaseOutBack();
+        LeanTween.moveX(popUp, 1.5f * Screen.width, timeToWait).setEaseOutBack().setOnComplete(() =>
+        {
+            popUp.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(popUp.GetComponent<MenuPopup>()?.previousSelectedButton);
+        });
     }
 
 
     public void QuitGame()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-        #endif 
+#endif
         Application.Quit();
     }
 

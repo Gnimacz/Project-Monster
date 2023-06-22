@@ -61,6 +61,7 @@ public class Jumping : State
         InputEvents.JumpButton += OnJump;
 
         player.animator.SetBool("Jump", true);
+        player.audioSource.PlayOneShot(player.jumpSound);
     }
 
     public override void ExitState(PlayerStateManager player)
