@@ -68,7 +68,27 @@ public class Sliding : State
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
 
+        //create a new audio source for the sliding sound
+
+        player.secondaryAudioSource.clip = player.slideSound;
+        player.secondaryAudioSource.time = player.audioSource.time;
+        player.secondaryAudioSource.volume = player.audioSource.volume;
+        //fade out the sliding sound
         player.audioSource.Stop();
+        player.secondaryAudioSource.Play();
+        player.StartCoroutine(FadeOutSlideSound(player.secondaryAudioSource));
+
+    }
+
+    IEnumerator FadeOutSlideSound(AudioSource audioSource)
+    {
+        float startVolume = audioSource.volume;
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / 0.5f;
+            yield return null;
+        }
+        audioSource.Stop();
     }
     
     private void OnMove(object sender, InputAction.CallbackContext context) { }

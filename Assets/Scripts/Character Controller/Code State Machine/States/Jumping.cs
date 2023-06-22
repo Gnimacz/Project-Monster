@@ -61,6 +61,9 @@ public class Jumping : State
         InputEvents.JumpButton += OnJump;
 
         player.animator.SetBool("Jump", true);
+
+        //play the jump sound with a random pitch
+        player.audioSource.pitch = Random.Range(0.8f, 0.9f);
         player.audioSource.PlayOneShot(player.jumpSound);
     }
 
