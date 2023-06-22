@@ -64,6 +64,7 @@ public class PlayerStateManager : MonoBehaviour
     [Space(10)]
     [Header("Sounds")]
     public AudioSource audioSource;
+    public AudioSource secondaryAudioSource;
     public AudioClip runSound;
     public AudioClip jumpSound;
     public AudioClip landSound;
@@ -122,6 +123,8 @@ public class PlayerStateManager : MonoBehaviour
     {
         if (newState == currentState) return;
         currentState.ExitState(this);
+        audioSource.volume = 1;
+        audioSource.pitch = 1;
         newState.EnterState(this);
         currentState = newState;
     }
@@ -230,7 +233,9 @@ public class PlayerStateManager : MonoBehaviour
             //the bouncy object but still gets launched the same amout no matter what
             //I think it works the way I intended but you never know with math
             rb.velocity += bouncyObject.launchDirection * bouncyObject.launchForce;
-            audioSource.PlayOneShot(bounceSound);
+            secondaryAudioSource.pitch = 1;
+            secondaryAudioSource.volume = 1;
+            secondaryAudioSource.PlayOneShot(bounceSound);
         }
     }
 

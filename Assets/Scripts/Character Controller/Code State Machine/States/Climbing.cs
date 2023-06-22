@@ -49,11 +49,27 @@ public class Climbing : State
         else if (player.rb.velocity.x < 0 && ControlValues.Instance.currentClimbOrientation == ControlValues.ClimbOrientation.LeftRight)
             //rotate the player to face the left
             ControlValues.Instance.targetMeshRotation = Quaternion.Euler(0, 90, 0);
-        
-        if(player.rb.velocity.magnitude > 0.1f)
-            player.audioSource.UnPause();
+
+        // if(player.rb.velocity.magnitude > 0.1f)
+        //     player.audioSource.UnPause();
+        // else
+        //     player.audioSource.Pause();
+
+        //if the player is not moving, fade out the climbing sound
+        if (player.rb.velocity.magnitude < 0.1f)
+        {
+            player.audioSource.volume -= Time.deltaTime * 2;
+            if (player.audioSource.volume <= 0.1f)
+            {
+                player.audioSource.volume = 0.1f;
+                player.audioSource.Pause();
+            }
+        }
         else
-            player.audioSource.Pause();
+        {
+            player.audioSource.volume = 1;
+            player.audioSource.UnPause();
+        }
     }
 
     public override void FixedUpdateState(PlayerStateManager player)
@@ -97,7 +113,19 @@ public class Climbing : State
         //loop the climbing sound
         player.audioSource.clip = player.climbSound;
         player.audioSource.loop = true;
+        player.audioSource.volume = UnityEngine.Random.Range(0.4f, 0.5f);
         player.audioSource.Play();
+    }
+
+    IEnumerator FadeOutSlideSound(AudioSource audioSource)
+    {
+        float startVolume = audioSource.volume;
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / 0.5f;
+            yield return null;
+        }
+        audioSource.Stop();
     }
 
     public override void ExitState(PlayerStateManager player)
@@ -116,6 +144,14 @@ public class Climbing : State
         InputEvents.JumpButton -= OnJump;
 
         ControlValues.Instance.lastClimbingTime = Time.timeSinceLevelLoad;
+        
+        player.secondaryAudioSource.clip = player.slideSound;
+        player.secondaryAudioSource.time = player.audioSource.time;
+        player.secondaryAudioSource.volume = player.audioSource.volume;
+        //fade out the sliding sound
+        player.audioSource.Stop();
+        player.secondaryAudioSource.Play();
+        player.StartCoroutine(FadeOutSlideSound(player.secondaryAudioSource));
     }
 
     private void OnMove(object sender, InputAction.CallbackContext context) { }
