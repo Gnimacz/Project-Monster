@@ -12,6 +12,7 @@ public class LevelSwitchSelector : Editor
     private void OnEnable()
     {
         levelSwitchScript = (SimpleLevelSwitch)target;
+        selectedScene = levelSwitchScript.levelToLoad;
     }
 
     public override void OnInspectorGUI()
@@ -38,7 +39,9 @@ public class LevelSwitchSelector : Editor
         //if the selected scene is different from the current scene, load the selected scene
         if (currentSceneIndex != sceneNames.FindIndex(x => x == selectedScene))
         {
+            Undo.RecordObject(levelSwitchScript, "Level To Load Changed");
             levelSwitchScript.levelToLoad = sceneNamesArray[currentSceneIndex];
+            EditorUtility.SetDirty(levelSwitchScript);
         }
     }
 }

@@ -4943,6 +4943,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1185112831043268476, guid: 54768ec1f84135346b30f3f025f5ae59,
+        type: 3}
+      propertyPath: levelToLoad
+      value: cutscene2
+      objectReference: {fileID: 0}
     - target: {fileID: 1263577380916470123, guid: 54768ec1f84135346b30f3f025f5ae59,
         type: 3}
       propertyPath: m_Size.x
@@ -4952,6 +4957,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263577380916470123, guid: 54768ec1f84135346b30f3f025f5ae59,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1263577380916470123, guid: 54768ec1f84135346b30f3f025f5ae59,
         type: 3}
