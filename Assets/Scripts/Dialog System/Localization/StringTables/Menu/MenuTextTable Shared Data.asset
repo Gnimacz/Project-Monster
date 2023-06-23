@@ -35,6 +35,22 @@ MonoBehaviour:
     m_Key: button.dutch
     m_Metadata:
       m_Items: []
+  - m_Id: 1356180244115456
+    m_Key: tutorialprompt.walk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1356448419524608
+    m_Key: tutorialprompt.climb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357465139785728
+    m_Key: tutorialprompt.slide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370768494800896
+    m_Key: tutorialprompt.mushroom
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

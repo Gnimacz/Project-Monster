@@ -38,6 +38,24 @@ MonoBehaviour:
     m_Localized: Nederlands (Dutch)
     m_Metadata:
       m_Items: []
+  - m_Id: 1356180244115456
+    m_Localized: 'Gebruik de joystick om te bewegen
+
+      Druk op "A" om te springen'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1356448419524608
+    m_Localized: Spring op de plant boven Spike om omhoog te klimmen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357465139785728
+    m_Localized: Je kan op modder glijden!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370768494800896
+    m_Localized: Gebruik paddestoelen om hoger te springen!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

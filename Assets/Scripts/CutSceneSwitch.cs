@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
+using UnityEngine.InputSystem;
+using MonsterInput;
 
 
 public class CutSceneSwitch : MonoBehaviour
@@ -16,12 +18,12 @@ public class CutSceneSwitch : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.anyKeyDown)
         {
             timer = 0f;
         }
         // Check if the "A" key is being held down
-        if (Input.GetKey(KeyCode.A))
+        if (Input.anyKey)
         {
             //add Time.deltaTime to the timer value
             timer += Time.deltaTime;
@@ -32,7 +34,6 @@ public class CutSceneSwitch : MonoBehaviour
                 SwitchToNextScene(TemplateScene);
             }
         }
-
 
     }
 

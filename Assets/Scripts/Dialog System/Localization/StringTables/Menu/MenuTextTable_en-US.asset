@@ -38,6 +38,24 @@ MonoBehaviour:
     m_Localized: Nederlands (Dutch)
     m_Metadata:
       m_Items: []
+  - m_Id: 1356180244115456
+    m_Localized: 'Use joystick to move
+
+      Press "A" to jump'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1356448419524608
+    m_Localized: Jump on the vines above Spike to climb!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357465139785728
+    m_Localized: You can jump on mud to slide!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1370768494800896
+    m_Localized: Use mushrooms to jumo higher!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
