@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.020845614, g: 0.022061676, b: 0.031043053, a: 1}
+  m_IndirectSpecularColor: {r: 0.020844512, g: 0.022073746, b: 0.031068534, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6226,7 +6226,7 @@ MonoBehaviour:
         asm: Unity.RenderPipelines.HighDefinition.Runtime}
       data:
         m_Name: Custom Pass
-        enabled: 1
+        enabled: 0
         targetColorBuffer: 0
         targetDepthBuffer: 0
         clearFlags: 0
@@ -7020,8 +7020,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7448718, y: 0.9017935, z: 1}
+  m_Center: {x: 0.12756412, y: -0.0491035, z: 0}
 --- !u!33 &476104326
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33851,8 +33851,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.59977597, z: 1}
-  m_Center: {x: -0.68653744, y: -0.17993157, z: 0}
+  m_Size: {x: 1.8921463, y: 0.59977597, z: 1}
+  m_Center: {x: -1.0198708, y: -0.17993157, z: 0}
 --- !u!135 &2060846723
 SphereCollider:
   m_ObjectHideFlags: 2
