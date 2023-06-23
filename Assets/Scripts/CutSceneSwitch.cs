@@ -29,18 +29,19 @@ public class CutSceneSwitch : MonoBehaviour
             //check if the timer value is above a certain amount
             if(timer >= timeDelay)
             {
-                SwitchToNextScene();
+                SwitchToNextScene(TemplateScene);
             }
         }
 
 
     }
 
-    public void SwitchToNextScene()
+    public void SwitchToNextScene(string SceneToSwitchTo)
     {
         // Load the next scene by name
         //SceneManager.LoadScene(TemplateScene);
-        SceneManager.LoadScene(2);
+        LevelLoadData.levelName = SceneToSwitchTo;
+        SceneManager.LoadScene("LoadingScreen");
     }
 
 }

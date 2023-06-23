@@ -390,14 +390,14 @@ MonoBehaviour:
   m_text: Hold "A" to skip.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e681ab0e3c723469723f68d05cb87a, type: 2}
-  m_sharedMaterial: {fileID: -5088126443621431661, guid: 77e681ab0e3c723469723f68d05cb87a,
+  m_sharedMaterial: {fileID: -5430708456880183696, guid: 77e681ab0e3c723469723f68d05cb87a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1599,7 +1599,7 @@ PlayableDirector:
   - key: {fileID: 6605443538149469335, guid: 2bdfa95d1be126b45ac0ca0b578e75a9, type: 2}
     value: {fileID: 192129589}
   - key: {fileID: -1546573414624380736, guid: 2bdfa95d1be126b45ac0ca0b578e75a9, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 746201085}
   - key: {fileID: 8020267708243017721, guid: 2bdfa95d1be126b45ac0ca0b578e75a9, type: 2}
     value: {fileID: 2001102902}
   - key: {fileID: 6289176135226530633, guid: 2bdfa95d1be126b45ac0ca0b578e75a9, type: 2}
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09ebef68e5f044b8009d60c0b9dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TemplateScene: TemplateScene
+  TemplateScene: MainMenu
   timeline: {fileID: 11400000, guid: 2bdfa95d1be126b45ac0ca0b578e75a9, type: 2}
   timer: 0
   timeDelay: 3
@@ -1683,13 +1683,13 @@ MonoBehaviour:
         - m_Target: {fileID: 746201084}
           m_TargetAssemblyTypeName: CutSceneSwitch, Assembly-CSharp
           m_MethodName: SwitchToNextScene
-          m_Mode: 1
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: MainMenu
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &782838484
