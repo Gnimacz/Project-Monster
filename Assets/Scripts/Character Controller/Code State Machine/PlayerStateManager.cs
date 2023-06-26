@@ -55,7 +55,8 @@ public class PlayerStateManager : MonoBehaviour
     public float climbExitJumpForce = 3f;
     public float slideExitLaunchForce = 3f;
     public float climbEnterExitCooldown = 0.5f;
-    
+    public float surfacEdgeCapRadius = 0.5f; //the distance from the edge of surfaces that decides if the player is going to exit the surface
+
     [NonSerialized] public bool isGrounded = false; //{ get; private set; }
     public Vector2 moveInput { get; private set; }
     #endregion 

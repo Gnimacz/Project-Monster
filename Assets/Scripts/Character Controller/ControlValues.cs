@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,8 @@ public class ControlValues : MonoBehaviour
 
     private void Awake()
     {
+        targetMeshRotation = quaternion.identity;//this is here as a test because I'm getting an issue where the target rotation is 0 by default
+        
         if (Instance is null)
         {
             Instance = this;
