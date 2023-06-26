@@ -49,11 +49,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1357465139785728
-    m_Localized: Je kan op modder glijden!
+    m_Localized: Je kan op modder springen om te glijden!
     m_Metadata:
       m_Items: []
   - m_Id: 1370768494800896
-    m_Localized: Gebruik paddestoelen om hoger te springen!
+    m_Localized: Gebruik paddenstoelen om hoger te springen!
     m_Metadata:
       m_Items: []
   references:
