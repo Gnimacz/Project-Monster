@@ -151,13 +151,13 @@ public class PlayerStateManager : MonoBehaviour
         ChangeState(deathState);
     }
 
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 300, 30), "Current State: " + currentState.ToString());
-        GUI.Label(new Rect(10, 20, 300, 30), "Current Velocity: " + rb.velocity.ToString());
-        GUI.Label(new Rect(10, 30, 300, 30), (Time.timeSinceLevelLoad - ControlValues.Instance.lastGroundedTime).ToString());
-        GUI.Label(new Rect(10, 50, 256, 30), "Current MoveInput: " + moveInput.ToString());
-    }
+    // private void OnGUI()
+    // {
+    //     GUI.Label(new Rect(10, 10, 300, 30), "Current State: " + currentState.ToString());
+    //     GUI.Label(new Rect(10, 20, 300, 30), "Current Velocity: " + rb.velocity.ToString());
+    //     GUI.Label(new Rect(10, 30, 300, 30), (Time.timeSinceLevelLoad - ControlValues.Instance.lastGroundedTime).ToString());
+    //     GUI.Label(new Rect(10, 50, 256, 30), "Current MoveInput: " + moveInput.ToString());
+    // }
 
     private void OnTriggerStay(Collider other)
     {
