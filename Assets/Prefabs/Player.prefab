@@ -3590,6 +3590,7 @@ MonoBehaviour:
   climbExitJumpForce: 8
   slideExitLaunchForce: 3
   climbEnterExitCooldown: 0.2
+  surfacEdgeCapRadius: 0.8
   audioSource: {fileID: 8002667472608639110}
   secondaryAudioSource: {fileID: 5609772028163332597}
   runSound: {fileID: 0}
