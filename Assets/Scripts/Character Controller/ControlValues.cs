@@ -23,6 +23,7 @@ public class ControlValues : MonoBehaviour
     public Vector3 currentSlideDirection;
     public Vector3 lastCheckpoint;
     public Vector3 currentSurfaceNormal;
+    public float currentSurfaceEdgeCapRadius;
     public List<Vector3> checkpointBacklog = new List<Vector3>();
     public float lastGroundedTime;
     public float lastClimbingTime;

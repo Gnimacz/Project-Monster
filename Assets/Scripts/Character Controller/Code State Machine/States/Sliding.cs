@@ -15,7 +15,7 @@ public class Sliding : State
         //     return;
         // }
 
-        if (Vector3.Distance(player.rb.position, ControlValues.Instance.currentSlideEnd) < player.surfacEdgeCapRadius)
+        if (Vector3.Distance(player.rb.position, ControlValues.Instance.currentSlideEnd) < ControlValues.Instance.currentSurfaceEdgeCapRadius)
         {
             player.ChangeState(player.idleState);
             return;

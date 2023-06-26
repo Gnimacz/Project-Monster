@@ -32,12 +32,12 @@ public class Climbing : State
 
         //these two ifs are here to prevent the player from climbing outside of the climb area
         if (closer == ControlValues.Instance.currentClimbStart &&
-            Vector3.Distance(player.rb.position, closer) < player.surfacEdgeCapRadius &&
+            Vector3.Distance(player.rb.position, closer) < ControlValues.Instance.currentSurfaceEdgeCapRadius &&
             input < 0)
             return;
 
         if (closer == ControlValues.Instance.currentClimbEnd &&
-            Vector3.Distance(player.rb.position, closer) < player.surfacEdgeCapRadius &&
+            Vector3.Distance(player.rb.position, closer) < ControlValues.Instance.currentSurfaceEdgeCapRadius &&
             input > 0)
             return;
 
