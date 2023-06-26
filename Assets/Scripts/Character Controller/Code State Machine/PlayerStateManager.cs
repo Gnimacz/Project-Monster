@@ -55,7 +55,7 @@ public class PlayerStateManager : MonoBehaviour
     public float climbExitJumpForce = 3f;
     public float slideExitLaunchForce = 3f;
     public float climbEnterExitCooldown = 0.5f;
-    public float surfacEdgeCapRadius = 0.5f; //the distance from the edge of surfaces that decides if the player is going to exit the surface
+    public float defaultSurfacEdgeCapRadius = 0.5f; //the distance from the edge of surfaces that decides if the player is going to exit the surface
 
     [NonSerialized] public bool isGrounded = false; //{ get; private set; }
     public Vector2 moveInput { get; private set; }
@@ -174,6 +174,7 @@ public class PlayerStateManager : MonoBehaviour
             ControlValues.Instance.currentClimbStart = climbSurface.startPoint.position;
             ControlValues.Instance.currentClimbEnd = climbSurface.endPoint.position;
             ControlValues.Instance.currentClimbOrientation = climbSurface.climbOrientation;
+            ControlValues.Instance.currentSurfaceEdgeCapRadius = climbSurface.edgeCapRadius;
             
             ChangeState(climbingState);
         }
@@ -189,7 +190,7 @@ public class PlayerStateManager : MonoBehaviour
                 ControlValues.Instance.currentClimbEnd = climbSurface.endPoint.position;
                 ControlValues.Instance.currentClimbOrientation = climbSurface.climbOrientation;
                 ControlValues.Instance.currentSurfaceNormal = climbSurface.normal;
-            
+                ControlValues.Instance.currentSurfaceEdgeCapRadius = climbSurface.edgeCapRadius;
 
                 ChangeState(climbingState);
                 break;
@@ -200,7 +201,7 @@ public class PlayerStateManager : MonoBehaviour
                 ControlValues.Instance.currentSlideEnd = slideSurface.endPoint.position;
                 ControlValues.Instance.currentSlideDirection = (slideSurface.endPoint.position - slideSurface.startPoint.position).normalized;
                 ControlValues.Instance.currentSurfaceNormal = slideSurface.normal;
-                
+                ControlValues.Instance.currentSurfaceEdgeCapRadius = slideSurface.edgeCapRadius;
 
                 ChangeState(slideState);
                 break;
