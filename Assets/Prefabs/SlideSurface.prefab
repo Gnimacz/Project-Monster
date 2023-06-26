@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 754098714334399897}
   - component: {fileID: 754098714334399896}
   - component: {fileID: 754098714334399899}
+  - component: {fileID: 4973295728085780341}
   m_Layer: 8
   m_Name: Collision
   m_TagString: SlideSurface
@@ -97,6 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0759405, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4973295728085780341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754098714334399909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6235fd89ea3584597bdc4ef590a4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surface: {fileID: 754098714810867524}
 --- !u!1 &754098714810867527
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +163,12 @@ MonoBehaviour:
   Collision: {fileID: 754098714334399898}
   normal: {x: 0, y: 0, z: 0}
   invertNormal: 0
+  OnSurfaceEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSurfaceExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &754098714812911886
 GameObject:
   m_ObjectHideFlags: 0

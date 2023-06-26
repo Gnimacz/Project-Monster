@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5381661595594034677}
   - component: {fileID: 5381661595594034666}
   - component: {fileID: 5381661595594034676}
+  - component: {fileID: 4030111760311613078}
   m_Layer: 8
   m_Name: Collision
   m_TagString: ClimbSurface
@@ -128,6 +129,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0759405, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4030111760311613078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381661595594034665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6235fd89ea3584597bdc4ef590a4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surface: {fileID: 5381661595816355257}
 --- !u!1 &5381661595816355263
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +194,12 @@ MonoBehaviour:
   Collision: {fileID: 5381661595594034664}
   normal: {x: -0, y: 1, z: 0}
   invertNormal: 0
+  OnSurfaceEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSurfaceExit:
+    m_PersistentCalls:
+      m_Calls: []
   climbOrientation: 0
 --- !u!1 &5381661596157307637
 GameObject:
