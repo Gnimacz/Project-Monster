@@ -15,11 +15,13 @@ public class PlayOneShot : MonoBehaviour
 
     public void Play()
     {
+        if(clip is null) return;
         audioSource.PlayOneShot(clip);
     }
 
     public void PlayRandom()
     {
+        if(clip is null) return;
         audioSource.PlayOneShot(clips[Random.Range(0, clips.Count)]);
     }
 }
