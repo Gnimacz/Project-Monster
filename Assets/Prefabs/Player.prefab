@@ -2015,7 +2015,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6719245597448002910, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: 689030851f5a99145953779eea02610b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3590,7 +3590,7 @@ MonoBehaviour:
   climbExitJumpForce: 8
   slideExitLaunchForce: 3
   climbEnterExitCooldown: 0.2
-  surfacEdgeCapRadius: 0.8
+  defaultSurfacEdgeCapRadius: 0.5
   audioSource: {fileID: 8002667472608639110}
   secondaryAudioSource: {fileID: 5609772028163332597}
   runSound: {fileID: 0}
@@ -3909,6 +3909,7 @@ MonoBehaviour:
   currentSlideDirection: {x: 0, y: 0, z: 0}
   lastCheckpoint: {x: 0, y: 0, z: 0}
   currentSurfaceNormal: {x: 0, y: 0, z: 0}
+  currentSurfaceEdgeCapRadius: 0
   checkpointBacklog: []
   lastGroundedTime: 0
   lastClimbingTime: 0
