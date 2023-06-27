@@ -113,7 +113,7 @@ public class Climbing : State
         //loop the climbing sound
         player.audioSource.clip = player.climbSound;
         player.audioSource.loop = true;
-        player.audioSource.volume = UnityEngine.Random.Range(0.4f, 0.5f);
+        player.audioSource.pitch = UnityEngine.Random.Range(0.4f, 0.5f);
         player.audioSource.Play();
     }
 
