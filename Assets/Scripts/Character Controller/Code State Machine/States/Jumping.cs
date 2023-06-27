@@ -66,6 +66,7 @@ public class Jumping : State
         player.audioSource.pitch = Random.Range(0.8f, 1f);
         player.audioSource.clip = player.jumpSound;
         player.audioSource.loop = false;
+        player.audioSource.volume = 0.5f;
         player.audioSource.Play();
     }
 

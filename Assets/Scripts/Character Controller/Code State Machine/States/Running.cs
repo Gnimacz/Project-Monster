@@ -60,6 +60,7 @@ public class Running : State
         player.audioSource.pitch = 1.2f;
         player.audioSource.clip = player.runSound;
         player.audioSource.loop = true;
+        player.audioSource.volume = 0.4f;
         player.audioSource.Play();
     }
 
