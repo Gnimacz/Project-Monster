@@ -3590,7 +3590,7 @@ MonoBehaviour:
   climbExitJumpForce: 8
   slideExitLaunchForce: 3
   climbEnterExitCooldown: 0.2
-  surfacEdgeCapRadius: 0.8
+  defaultSurfacEdgeCapRadius: 0.5
   audioSource: {fileID: 8002667472608639110}
   secondaryAudioSource: {fileID: 5609772028163332597}
   runSound: {fileID: 0}
@@ -3909,6 +3909,7 @@ MonoBehaviour:
   currentSlideDirection: {x: 0, y: 0, z: 0}
   lastCheckpoint: {x: 0, y: 0, z: 0}
   currentSurfaceNormal: {x: 0, y: 0, z: 0}
+  currentSurfaceEdgeCapRadius: 0
   checkpointBacklog: []
   lastGroundedTime: 0
   lastClimbingTime: 0
@@ -3926,7 +3927,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 0.9
   Loop: 0
   Mute: 0
