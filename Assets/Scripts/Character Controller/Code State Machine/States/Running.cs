@@ -57,8 +57,10 @@ public class Running : State
         InputEvents.InteractButton += OnInteract;
         InputEvents.JumpButton += OnJump;
         //loop the running sound
+        player.audioSource.pitch = 1.2f;
         player.audioSource.clip = player.runSound;
         player.audioSource.loop = true;
+        player.audioSource.volume = 0.4f;
         player.audioSource.Play();
     }
 

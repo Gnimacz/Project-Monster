@@ -3590,13 +3590,13 @@ MonoBehaviour:
   climbExitJumpForce: 8
   slideExitLaunchForce: 3
   climbEnterExitCooldown: 0.2
-  surfacEdgeCapRadius: 0.8
+  defaultSurfacEdgeCapRadius: 0.5
   audioSource: {fileID: 8002667472608639110}
   secondaryAudioSource: {fileID: 5609772028163332597}
-  runSound: {fileID: 0}
+  runSound: {fileID: 8300000, guid: c85c472714ab5204bb8468e002d79af4, type: 3}
   jumpSound: {fileID: 8300000, guid: bb4693f0d153f4d4380607808b3a9a0b, type: 3}
   landSound: {fileID: 8300000, guid: b531b201546e3b848a3145f80e61654d, type: 3}
-  slideSound: {fileID: 8300000, guid: 2d3e7de30c43dfe4f8794f620b9523b9, type: 3}
+  slideSound: {fileID: 8300000, guid: 5700b1cda6f7966459f14ebb2befb636, type: 3}
   climbSound: {fileID: 8300000, guid: a8533b968665e3d4e81611540d3cb719, type: 3}
   bounceSound: {fileID: 8300000, guid: 0fb7daad3c56d604081c3738ad43c71b, type: 3}
   deathSound: {fileID: 8300000, guid: 9865edd4929cb354ba5d69a447cd189a, type: 3}
@@ -3909,6 +3909,7 @@ MonoBehaviour:
   currentSlideDirection: {x: 0, y: 0, z: 0}
   lastCheckpoint: {x: 0, y: 0, z: 0}
   currentSurfaceNormal: {x: 0, y: 0, z: 0}
+  currentSurfaceEdgeCapRadius: 0
   checkpointBacklog: []
   lastGroundedTime: 0
   lastClimbingTime: 0
@@ -3926,7 +3927,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 0.9
   Loop: 0
   Mute: 0
@@ -4022,7 +4023,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

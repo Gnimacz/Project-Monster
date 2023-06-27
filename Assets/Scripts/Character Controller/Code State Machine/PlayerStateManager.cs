@@ -124,8 +124,8 @@ public class PlayerStateManager : MonoBehaviour
     {
         if (newState == currentState) return;
         currentState.ExitState(this);
-        audioSource.volume = 1;
-        audioSource.pitch = 1;
+        //audioSource.volume = 1;
+        //audioSource.pitch = 1;
         newState.EnterState(this);
         currentState = newState;
     }

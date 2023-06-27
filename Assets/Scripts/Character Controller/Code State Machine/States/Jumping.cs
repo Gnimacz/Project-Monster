@@ -63,12 +63,16 @@ public class Jumping : State
         player.animator.SetBool("Jump", true);
 
         //play the jump sound with a random pitch
-        player.audioSource.pitch = Random.Range(0.8f, 0.9f);
-        player.audioSource.PlayOneShot(player.jumpSound);
+        player.audioSource.pitch = Random.Range(0.8f, 1f);
+        player.audioSource.clip = player.jumpSound;
+        player.audioSource.loop = false;
+        player.audioSource.volume = 0.5f;
+        player.audioSource.Play();
     }
 
     public override void ExitState(PlayerStateManager player)
     {
+        player.audioSource.pitch = 1;
         player.animator.SetBool("Jump", false);
         InputEvents.Move -= OnMove;
         InputEvents.InteractButton -= OnInteract;

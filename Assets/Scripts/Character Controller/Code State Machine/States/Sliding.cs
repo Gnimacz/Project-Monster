@@ -51,8 +51,10 @@ public class Sliding : State
         InputEvents.JumpButton += OnJump;
 
         //loop the sliding sound
+        player.audioSource.volume = 0.3f;
         player.audioSource.clip = player.slideSound;
         player.audioSource.loop = true;
+        player.audioSource.pitch = 1;
         player.audioSource.Play();
     }
 
