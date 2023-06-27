@@ -8747,15 +8747,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  - a: 12
-    b: 13
-  - a: 14
-    b: 12
-  - a: 13
-    b: 15
-  - a: 15
-    b: 14
-  m_SelectedVertices: 0c0000000d0000000e0000000f000000
+  m_SelectedVertices: 
 --- !u!1001 &584769910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27769,6 +27761,7 @@ Transform:
   - {fileID: 1830101076}
   - {fileID: 1073125279}
   - {fileID: 1336237501}
+  - {fileID: 210156280}
   m_Father: {fileID: 279891993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
