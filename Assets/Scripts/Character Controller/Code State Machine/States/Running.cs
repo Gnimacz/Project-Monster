@@ -62,6 +62,9 @@ public class Running : State
         player.audioSource.loop = true;
         player.audioSource.volume = 0.4f;
         player.audioSource.Play();
+
+        //play the running vfx
+        player.runVFX.Play();
     }
 
     public override void ExitState(PlayerStateManager player)
@@ -71,6 +74,8 @@ public class Running : State
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
         player.audioSource.Stop();
+
+        player.runVFX.Stop();
     }
 
     private void OnMove(object sender, InputAction.CallbackContext context) { }

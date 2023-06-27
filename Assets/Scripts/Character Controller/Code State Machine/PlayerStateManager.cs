@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using MonsterInput;
-using Unity.VisualScripting;
+using UnityEngine.VFX;
 
 public class PlayerStateManager : MonoBehaviour
 {
@@ -75,11 +75,24 @@ public class PlayerStateManager : MonoBehaviour
     public AudioClip deathSound;
     #endregion
 
+    #region VFX
+    [Space(10)]
+    [Header("VFX")]
+    public VisualEffect runVFX;
+    public VisualEffect jumpVFX;
+    public VisualEffect slideVFX;
+    #endregion
+
     private void Start()
     {
         //add current position as checkpoint at the start for testing
         ControlValues.Instance.lastCheckpoint = transform.position;
         ControlValues.Instance.checkpointBacklog.Add(transform.position);
+
+        //stop the vfx
+        runVFX.Stop();
+        jumpVFX.Stop();
+        slideVFX.Stop();
     }
 
     private void OnEnable()

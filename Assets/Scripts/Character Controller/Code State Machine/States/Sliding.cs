@@ -56,6 +56,9 @@ public class Sliding : State
         player.audioSource.loop = true;
         player.audioSource.pitch = 1;
         player.audioSource.Play();
+
+        //play the slide vfx
+        player.slideVFX.Play();
     }
 
     public override void ExitState(PlayerStateManager player)
@@ -79,6 +82,9 @@ public class Sliding : State
         player.audioSource.Stop();
         player.secondaryAudioSource.Play();
         player.StartCoroutine(FadeOutSlideSound(player.secondaryAudioSource));
+
+        //play the slide vfx
+        player.slideVFX.Stop();
 
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MonsterInput;
+using UnityEngine.VFX;
 
 public class InAir : State
 {
@@ -51,6 +52,8 @@ public class InAir : State
         InputEvents.InteractButton -= OnInteract;
         InputEvents.JumpButton -= OnJump;
         if (player.rb.velocity.y <= -20f) player.audioSource.PlayOneShot(player.landSound);
+
+        player.jumpVFX.Stop();
     }
 
     void InAirMovement(PlayerStateManager player)

@@ -68,6 +68,9 @@ public class Jumping : State
         player.audioSource.loop = false;
         player.audioSource.volume = 0.5f;
         player.audioSource.Play();
+
+        //play the jump vfx
+        player.jumpVFX.Play();
     }
 
     public override void ExitState(PlayerStateManager player)
