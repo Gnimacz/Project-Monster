@@ -56,6 +56,10 @@ MonoBehaviour:
     m_Localized: Gebruik paddenstoelen om hoger te springen!
     m_Metadata:
       m_Items: []
+  - m_Id: 3169374969245696
+    m_Localized: Hou "A" ingedrukt om over te slaan.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadLevelWithLoadingScreen : MonoBehaviour
 {
-    float minLoadTime = 3f;
+    float minLoadTime = 1.5f;
     float loadTime = 0f;
     private void Start()
     {

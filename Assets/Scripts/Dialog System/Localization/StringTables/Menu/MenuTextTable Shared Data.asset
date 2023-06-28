@@ -51,6 +51,10 @@ MonoBehaviour:
     m_Key: tutorialprompt.mushroom
     m_Metadata:
       m_Items: []
+  - m_Id: 3169374969245696
+    m_Key: menuprompt.skip
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

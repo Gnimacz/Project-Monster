@@ -56,6 +56,10 @@ MonoBehaviour:
     m_Localized: Use mushrooms to jump higher!
     m_Metadata:
       m_Items: []
+  - m_Id: 3169374969245696
+    m_Localized: Hold "A" to skip.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
