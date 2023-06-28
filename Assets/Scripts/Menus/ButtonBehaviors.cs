@@ -24,7 +24,7 @@ public class ButtonBehaviors : MonoBehaviour
         LeanTween.moveX(popUp, 0.5f * Screen.width, timeToWait).setEaseOutBack().setOnComplete(() =>
         {
             MenuPopup popUpComponent = popUp.GetComponent<MenuPopup>();
-            if(popUpComponent == null)
+            if (popUpComponent == null)
             {
                 return;
             }
