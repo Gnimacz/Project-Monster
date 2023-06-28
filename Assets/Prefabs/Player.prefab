@@ -84,7 +84,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -336632895940987247, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: a897a233867045444b73e8fe270b4c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -434,7 +434,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -59136025557594432, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: a897a233867045444b73e8fe270b4c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1324,7 +1324,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5331783657071394856, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: 9c0b116bc7072cb48a0e6fa6c9d04892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1765,7 +1765,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1299193914983447894, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: a897a233867045444b73e8fe270b4c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2742,7 +2742,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4155639976828068073, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: 9c0b116bc7072cb48a0e6fa6c9d04892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3488,7 +3488,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8214333394354215739, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: a897a233867045444b73e8fe270b4c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3742,7 +3742,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8450207974973062907, guid: d288317ad1f38dfcab2a1054839ce67a, type: 3}
+  - {fileID: 2100000, guid: 6c0c8aa9d76bcf04f9ae51831cb62d91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
