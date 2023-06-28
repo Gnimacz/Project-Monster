@@ -121,6 +121,7 @@ public class Climbing : State
     IEnumerator FadeOutSlideSound(AudioSource audioSource)
     {
         float startVolume = audioSource.volume;
+        audioSource.clip = player.climbSound;
         while (audioSource.volume > 0)
         {
             audioSource.volume -= startVolume * Time.deltaTime / 0.5f;
