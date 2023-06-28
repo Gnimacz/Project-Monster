@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MonsterInput;
+using UnityEngine.VFX;
 
 public class Jumping : State
 {
     PlayerStateManager player;
     private double stateEnterTime;
+    private Transform playerTransform;
     
     public override void UpdateState(PlayerStateManager player)
     {
@@ -32,6 +34,8 @@ public class Jumping : State
             ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
         
         InAirMovement(this.player);
+        
+        // player.jumpVFX.gameObject.transform.position = playerTransform.position;
     }
 
     public override void FixedUpdateState(PlayerStateManager player)
@@ -70,6 +74,8 @@ public class Jumping : State
         player.audioSource.Play();
 
         //play the jump vfx
+        player.jumpVFX.gameObject.transform.parent = null;  
+        player.jumpVFX.gameObject.transform.position = player.transform.position + new Vector3(0, -0.5f, 0);
         player.jumpVFX.Play();
     }
 
