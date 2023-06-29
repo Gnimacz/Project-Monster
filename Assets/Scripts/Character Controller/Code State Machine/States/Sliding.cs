@@ -7,6 +7,7 @@ using MonsterInput;
 public class Sliding : State
 {
     private PlayerStateManager player;
+    Transform oldParentTransform;
     public override void UpdateState(PlayerStateManager player)
     {
         // if (Input.GetKeyDown(KeyCode.Space))
@@ -58,6 +59,11 @@ public class Sliding : State
         player.audioSource.Play();
 
         //play the slide vfx
+        if(oldParentTransform == null) oldParentTransform = player.slideVFX.gameObject.transform.parent;
+        player.slideVFX.gameObject.transform.parent = oldParentTransform;
+        player.slideVFX.gameObject.transform.localPosition = new Vector3(0, -0.5f, 0);
+        player.slideVFX.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        // player.slideVFX.gameObject.transform.rotation = player.mesh.rotation * Quaternion.Euler(0, 90, 0);
         player.slideVFX.Play();
     }
 
@@ -84,6 +90,7 @@ public class Sliding : State
         player.StartCoroutine(FadeOutSlideSound(player.secondaryAudioSource));
 
         //play the slide vfx
+        player.slideVFX.transform.parent = null;
         player.slideVFX.Stop();
 
     }

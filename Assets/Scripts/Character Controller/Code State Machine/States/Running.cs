@@ -6,10 +6,12 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using MonsterInput;
+using UnityEngine.VFX;
 
 public class Running : State
 {
     PlayerStateManager player;
+    Transform oldParentTransform;
     public override void UpdateState(PlayerStateManager player)
     {
         //Refactor this
@@ -36,12 +38,12 @@ public class Running : State
             player.ChangeState(player.inAirState);
             return;
         }
-        
+
         if (player.rb.velocity.x > 0)
             ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(Vector3.right, Vector3.up);
         else
             ControlValues.Instance.targetMeshRotation = Quaternion.LookRotation(Vector3.left, Vector3.up);
-        
+
 
         player.ApplyDrag();
     }
@@ -51,7 +53,7 @@ public class Running : State
     public override void EnterState(PlayerStateManager player)
     {
         player.animator.SetBool("Run", true);
-        
+
         this.player = player;
         InputEvents.Move += OnMove;
         InputEvents.InteractButton += OnInteract;
@@ -64,6 +66,11 @@ public class Running : State
         player.audioSource.Play();
 
         //play the running vfx
+        if (oldParentTransform == null) oldParentTransform = player.runVFX.transform.parent;
+        player.runVFX.gameObject.transform.parent = oldParentTransform;
+        player.runVFX.gameObject.transform.localPosition = new Vector3(0, -0.5f, 0);
+        player.runVFX.gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        // player.runVFX.gameObject.transform.rotation = player.mesh.rotation * Quaternion.Euler(0, 90, 0);
         player.runVFX.Play();
     }
 
@@ -75,6 +82,8 @@ public class Running : State
         InputEvents.JumpButton -= OnJump;
         player.audioSource.Stop();
 
+        oldParentTransform = player.runVFX.transform.parent;
+        Debug.Log(oldParentTransform.name);
         player.runVFX.Stop();
     }
 
@@ -85,6 +94,7 @@ public class Running : State
         if (context.ReadValueAsButton())
         {
             player.ChangeState(player.jumpingState);
+            player.runVFX.transform.parent = null;
             return;
         }
     }
